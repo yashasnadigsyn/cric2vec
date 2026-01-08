@@ -8,10 +8,11 @@ import os
 import glob
 
 from config import DATA_DIR, COMBINED_CSV, COMBINED_PARQUET, COLUMNS_TO_KEEP
-from config import PLAYER_MAPPING, TEAM_MAPPING, OUTCOME_MAPPING
+from config import PLAYER_MAPPING, TEAM_MAPPING, VENUE_MAPPING, OUTCOME_MAPPING
 from mapping import (
     create_player_mapping, save_player_mapping,
     create_team_mapping, save_team_mapping,
+    create_venue_mapping, save_venue_mapping,
     save_outcome_mapping
 )
 
@@ -59,6 +60,12 @@ def process_and_save(df: pd.DataFrame) -> pd.DataFrame:
         print(f"\nWarning: Missing columns: {missing_cols}")
     
     df_subset = df[available_cols].copy()
+    
+    # Ensure string columns stay as strings (avoid parquet type inference issues)
+    string_cols = ['season', 'venue', 'start_date']
+    for col in string_cols:
+        if col in df_subset.columns:
+            df_subset[col] = df_subset[col].astype(str)
     
     # Save as CSV
     df_subset.to_csv(COMBINED_CSV, index=False)
@@ -156,6 +163,11 @@ if __name__ == "__main__":
     team_to_id = create_team_mapping(subset_df)
     save_team_mapping(team_to_id, TEAM_MAPPING)
     
+    # Create venue mapping if venue column exists
+    if 'venue' in subset_df.columns:
+        venue_to_id = create_venue_mapping(subset_df)
+        save_venue_mapping(venue_to_id, VENUE_MAPPING)
+    
     save_outcome_mapping(OUTCOME_MAPPING)
     print(f"Saved outcome mapping: {OUTCOME_MAPPING}")
     
@@ -165,5 +177,6 @@ if __name__ == "__main__":
     print(f"  - {COMBINED_PARQUET.name} (for fast loading)")
     print(f"  - {PLAYER_MAPPING.name}")
     print(f"  - {TEAM_MAPPING.name}")
+    print(f"  - {VENUE_MAPPING.name}")
     print(f"  - {OUTCOME_MAPPING.name}")
     print("="*60)

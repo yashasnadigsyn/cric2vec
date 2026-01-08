@@ -1,18 +1,30 @@
 {
-    "0": "0_run",
-    "1": "1_run",
-    "2": "2_run",
-    "3": "3_run",
-    "4": "4_run",
-    "5": "5_run",
-    "6": "6_run",
-    "7": "wide",
-    "8": "noball",
-    "9": "w_caught",
-    "10": "w_bowled",
-    "11": "w_lbw",
-    "12": "w_runout",
-    "13": "w_stumped",
-    "14": "w_caught_and_bowled",
-    "15": "w_other"
+    "outcome_to_id": {
+        "0_run": 0,
+        "1_run": 1,
+        "2_3_run": 2,
+        "4_run": 3,
+        "6_run": 4,
+        "extras": 5,
+        "w_caught": 6,
+        "w_bowled": 7,
+        "w_lbw": 8,
+        "w_runout": 9,
+        "w_stumped": 10,
+        "w_other": 11
+    },
+    "id_to_outcome": {
+        "0": "0_run",
+        "1": "1_run",
+        "2": "2_3_run",
+        "3": "4_run",
+        "4": "6_run",
+        "5": "extras",
+        "6": "w_caught",
+        "7": "w_bowled",
+        "8": "w_lbw",
+        "9": "w_runout",
+        "10": "w_stumped",
+        "11": "w_other"
+    }
 }

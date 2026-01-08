@@ -22,6 +22,7 @@ COMBINED_PARQUET = BASE_DIR / "ipl_combined.parquet"
 # =============================================================================
 PLAYER_MAPPING = BASE_DIR / "player_mapping.csv"
 TEAM_MAPPING = BASE_DIR / "team_mapping.csv"
+VENUE_MAPPING = BASE_DIR / "venue_mapping.csv"
 OUTCOME_MAPPING = BASE_DIR / "outcome_mapping.json"
 
 # =============================================================================
@@ -29,6 +30,9 @@ OUTCOME_MAPPING = BASE_DIR / "outcome_mapping.json"
 # =============================================================================
 COLUMNS_TO_KEEP = [
     'match_id',
+    'season',        # For temporal analysis
+    'start_date',    # For temporal/chronological splitting
+    'venue',         # For venue embeddings (pitch/ground effects)
     'innings',
     'ball',
     'batting_team',
@@ -50,24 +54,26 @@ COLUMNS_TO_KEEP = [
 ]
 
 # =============================================================================
-# Model Configuration
+# Model Configuration (aligned with batter_pitcher2vec paper)
 # =============================================================================
 MODEL_CONFIG = {
-    'embedding_dim': 7,
-    'hidden_dim_1': 128,
-    'hidden_dim_2': 64,
-    'dropout': 0.2,
+    'embedding_dim': 9,      # Paper uses 9-dimensional embeddings
+    'hidden_dim': 128,       # Single hidden layer
 }
 
 # =============================================================================
-# Training Configuration
+# Training Configuration (aligned with batter_pitcher2vec paper)
 # =============================================================================
 TRAINING_CONFIG = {
-    'batch_size': 1024,
-    'learning_rate': 0.001,
+    'batch_size': 128,       # Paper uses 100, we use 128 for GPU efficiency
+    'learning_rate': 0.01,   # Paper uses 0.01
+    'momentum': 0.9,         # Nesterov momentum
+    'weight_decay': 1e-6,    # Paper uses decay of 10^-6
     'epochs': 100,
     'val_split': 0.1,
-    'num_workers': 0,  # Set to 4 if running on a machine with multiple cores
+    'num_workers': 0,        # Set to 4 if running on a machine with multiple cores
+    'use_focal_loss': False, # Set to True to use focal loss instead of cross-entropy
+    'focal_gamma': 2.0,      # Focusing parameter for focal loss (try 0.5, 1.0, 2.0, 3.0)
 }
 
 # =============================================================================

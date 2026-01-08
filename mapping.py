@@ -9,27 +9,28 @@ from pathlib import Path
 from typing import Tuple, Dict, Set
 
 # =============================================================================
-# Outcome Definitions
+# Outcome Definitions (Merged for better class balance)
 # =============================================================================
 
-# Granular outcome classes for the model
+# Reduced outcome classes (16 -> 12) to address class imbalance
 OUTCOME_CLASSES = [
     # Runs (Normal Deliveries)
-    '0_run', '1_run', '2_run', '3_run', '4_run', '5_run', '6_run',
+    '0_run',      # 0: dot balls
+    '1_run',      # 1: singles
+    '2_3_run',    # 2: doubles and triples merged (rare 3s)
+    '4_run',      # 3: boundaries
+    '6_run',      # 4: sixes
     
-    # Extras (Primary events)
-    'wide', 'noball',
+    # Extras (merged: wides, no-balls, 5 runs)
+    'extras',     # 5: all extras combined
     
-    # Wickets (Specific Types)
-    'w_caught', 
-    'w_bowled', 
-    'w_lbw', 
-    'w_runout', 
-    'w_stumped', 
-    'w_caught_and_bowled',
-    
-    # Catch-all for rare wickets (hit wicket, obstructing field, etc.)
-    'w_other' 
+    # Wickets (keeping distinct for cricket-meaningful context)
+    'w_caught',   # 6: caught
+    'w_bowled',   # 7: bowled
+    'w_lbw',      # 8: leg before wicket
+    'w_runout',   # 9: run out
+    'w_stumped',  # 10: stumped
+    'w_other'     # 11: caught_and_bowled + other rare wickets
 ]
 
 
@@ -51,6 +52,8 @@ def get_outcome_id(row, outcome_to_id: Dict[str, int]) -> int:
     Determines the Outcome Label for a single row (ball).
     Priority: Wicket > Extras > Runs
     
+    Uses merged outcome categories for better class balance.
+    
     Args:
         row: A pandas DataFrame row representing a single delivery
         outcome_to_id: Dictionary mapping outcome names to IDs
@@ -62,43 +65,72 @@ def get_outcome_id(row, outcome_to_id: Dict[str, int]) -> int:
     if isinstance(row['wicket_type'], str):
         w_type = row['wicket_type'].lower()
         
+        # Map wicket types - merge rare ones into w_other
         wicket_map = {
             'caught': 'w_caught',
             'bowled': 'w_bowled',
             'lbw': 'w_lbw',
             'run out': 'w_runout',
             'stumped': 'w_stumped',
-            'caught and bowled': 'w_caught_and_bowled',
+            # Rare wickets merged into w_other
+            'caught and bowled': 'w_other',
+            'hit wicket': 'w_other',
+            'obstructing the field': 'w_other',
         }
         
         outcome_key = wicket_map.get(w_type, 'w_other')
         return outcome_to_id[outcome_key]
 
-    # 2. Check for Extras (Wides / No Balls)
-    if row['wides'] > 0:
-        return outcome_to_id['wide']
-    
-    if row['noballs'] > 0:
-        return outcome_to_id['noball']
+    # 2. Check for Extras (wides, no-balls -> merged to 'extras')
+    if row['wides'] > 0 or row['noballs'] > 0:
+        return outcome_to_id['extras']
         
-    # 3. Runs off Bat (0-6)
+    # 3. Runs off Bat
     runs = int(row['runs_off_bat'])
-    label = f"{runs}_run"
     
-    if label in outcome_to_id:
-        return outcome_to_id[label]
-    else:
-        # Cap at 6 for rare cases (>6 runs or data errors)
-        if runs > 6:
-            return outcome_to_id['6_run']
+    # Map runs to merged categories
+    if runs == 0:
         return outcome_to_id['0_run']
+    elif runs == 1:
+        return outcome_to_id['1_run']
+    elif runs in [2, 3]:
+        return outcome_to_id['2_3_run']  # Merge 2 and 3 runs
+    elif runs == 4:
+        return outcome_to_id['4_run']
+    elif runs == 5:
+        return outcome_to_id['extras']  # 5 runs usually means extras (wide+4, noball+4)
+    elif runs >= 6:
+        return outcome_to_id['6_run']
+    else:
+        return outcome_to_id['0_run']  # Fallback
 
 
 def save_outcome_mapping(filepath: Path) -> None:
     """Save outcome mapping to a JSON file."""
-    _, id_to_outcome = get_outcome_mappings()
+    outcome_to_id, id_to_outcome = get_outcome_mappings()
     with open(filepath, 'w') as f:
-        json.dump(id_to_outcome, f, indent=4)
+        json.dump({
+            'outcome_to_id': outcome_to_id,
+            'id_to_outcome': {str(k): v for k, v in id_to_outcome.items()}
+        }, f, indent=4)
+
+
+def load_outcome_mapping(filepath: Path) -> dict:
+    """Load outcome mapping from a JSON file."""
+    with open(filepath, 'r') as f:
+        data = json.load(f)
+    
+    # Handle both old format (just id_to_outcome) and new format (with outcome_to_id)
+    if 'outcome_to_id' in data:
+        return data
+    else:
+        # Old format: just {id: outcome}
+        id_to_outcome = {int(k): v for k, v in data.items()}
+        outcome_to_id = {v: int(k) for k, v in data.items()}
+        return {
+            'outcome_to_id': outcome_to_id,
+            'id_to_outcome': id_to_outcome
+        }
 
 
 # =============================================================================
@@ -183,6 +215,43 @@ def load_team_mapping(filepath: Path) -> Dict[str, int]:
     """Load team mapping from a CSV file."""
     df = pd.read_csv(filepath)
     return dict(zip(df['team_name'], df['team_id']))
+
+
+# =============================================================================
+# Venue Mapping Functions
+# =============================================================================
+
+def create_venue_mapping(df: pd.DataFrame) -> Dict[str, int]:
+    """
+    Create venue name to ID mapping from a DataFrame.
+    
+    Args:
+        df: DataFrame containing venue column
+        
+    Returns:
+        Dictionary mapping venue names to integer IDs
+    """
+    venues = sorted(df['venue'].dropna().unique())
+    venue_to_id = {venue: idx for idx, venue in enumerate(venues)}
+    
+    return venue_to_id
+
+
+def save_venue_mapping(venue_to_id: Dict[str, int], filepath: Path) -> None:
+    """Save venue mapping to a CSV file."""
+    venue_df = pd.DataFrame({
+        'venue_name': list(venue_to_id.keys()),
+        'venue_id': list(venue_to_id.values())
+    })
+    venue_df.to_csv(filepath, index=False)
+    print(f"Saved venue mapping: {filepath}")
+    print(f"Total venues mapped: {len(venue_to_id)}")
+
+
+def load_venue_mapping(filepath: Path) -> Dict[str, int]:
+    """Load venue mapping from a CSV file."""
+    df = pd.read_csv(filepath)
+    return dict(zip(df['venue_name'], df['venue_id']))
 
 
 # =============================================================================

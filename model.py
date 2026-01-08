@@ -2,50 +2,74 @@ import torch
 import torch.nn as nn
 
 class Cricket2Vec(nn.Module):
-    def __init__(self, num_players, num_outcomes, embedding_dim=7):
+    """
+    Cricket2Vec model inspired by batter_pitcher2vec paper.
+    
+    Architecture matches the paper:
+    1. Embedding lookup for batter and bowler
+    2. Sigmoid activation after embeddings (key difference from typical ReLU)
+    3. Concatenation of embeddings
+    4. Single hidden layer with ReLU
+    5. Output layer (softmax applied by CrossEntropyLoss)
+    """
+    def __init__(self, num_players, num_outcomes, embedding_dim=9):
         super().__init__()
         
-        # 1. Embedding Layers
-        # Concept: Input ID -> Dense Vector
-        # We need two separate sets of skills.
+        self.embedding_dim = embedding_dim
+        
+        # 1. Embedding Layers (separate for batting and bowling skills)
         self.bat_embedding = nn.Embedding(num_players, embedding_dim)
         self.bowl_embedding = nn.Embedding(num_players, embedding_dim)
         
-        # 2. Merge Layer (Concatenation)
-        # Input to next layer will be size: embedding_dim * 2
-
-        # 3. Dense / Linear Layers (The "Interaction" Logic)
-        # We want to learn non-linear interactions (e.g., Left Hand Bat vs Off Spin)
-        self.fc1 = nn.Linear(embedding_dim * 2, 128) # Hidden layer 1
-        self.relu = nn.ReLU()                        # Activation
-        self.dropout = nn.Dropout(0.2)               # Dropout for regularization
-        self.fc2 = nn.Linear(128, 64)                # Hidden layer 2 (optional)
+        # 2. Sigmoid activation (as per batter_pitcher2vec paper)
+        # Paper: w_b = σ(W_b · h_b) where σ is logistic/sigmoid
+        self.sigmoid = nn.Sigmoid()
+        
+        # 3. Hidden layer (concatenated embeddings -> hidden)
+        # Paper uses direct softmax, but we add one hidden layer for expressiveness
+        self.fc1 = nn.Linear(embedding_dim * 2, 128)
+        self.relu = nn.ReLU()
         
         # 4. Output Layer
-        # Map to the probability of each outcome
-        self.output_layer = nn.Linear(64, num_outcomes)
+        self.output_layer = nn.Linear(128, num_outcomes)
         
-        # Note: No Softmax here if using nn.CrossEntropyLoss during training 
-        # (CrossEntropyLoss includes LogSoftmax)
+        # Initialize weights
+        self._init_weights()
+    
+    def _init_weights(self):
+        """Initialize embeddings with small values for stable training."""
+        nn.init.normal_(self.bat_embedding.weight, mean=0, std=0.1)
+        nn.init.normal_(self.bowl_embedding.weight, mean=0, std=0.1)
+        nn.init.xavier_uniform_(self.fc1.weight)
+        nn.init.xavier_uniform_(self.output_layer.weight)
+        
     def forward(self, striker_ids, bowler_ids):
         # Step 1: Lookup Embeddings
-        # striker_ids shape: [batch_size]
-        bat_vecs = self.bat_embedding(striker_ids)  # Shape: [batch, emb_dim]
-        bowl_vecs = self.bowl_embedding(bowler_ids) # Shape: [batch, emb_dim]
+        bat_vecs = self.bat_embedding(striker_ids)   # [batch, emb_dim]
+        bowl_vecs = self.bowl_embedding(bowler_ids)  # [batch, emb_dim]
         
-        # Step 2: Combine
-        # Concatenate the two vectors side-by-side
-        combined = torch.cat([bat_vecs, bowl_vecs], dim=1) # Shape: [batch, emb_dim * 2]
+        # Step 2: Apply Sigmoid (as per paper - key architectural choice)
+        bat_vecs = self.sigmoid(bat_vecs)
+        bowl_vecs = self.sigmoid(bowl_vecs)
         
-        # Step 3: Pass through hidden layers
+        # Step 3: Concatenate
+        combined = torch.cat([bat_vecs, bowl_vecs], dim=1)  # [batch, emb_dim * 2]
+        
+        # Step 4: Hidden layer
         x = self.fc1(combined)
         x = self.relu(x)
-        x = self.dropout(x) # Added dropout
-        x = self.fc2(x)
-        x = self.relu(x)
-        x = self.dropout(x) # Added dropout
         
-        # Step 4: Output Logits
-        logits = self.output_layer(x) # Shape: [batch, num_outcomes]
+        # Step 5: Output logits
+        logits = self.output_layer(x)  # [batch, num_outcomes]
         
         return logits
+    
+    def get_batter_embeddings(self, player_ids):
+        """Get batting embeddings for visualization/analysis."""
+        with torch.no_grad():
+            return self.sigmoid(self.bat_embedding(player_ids))
+    
+    def get_bowler_embeddings(self, player_ids):
+        """Get bowling embeddings for visualization/analysis."""
+        with torch.no_grad():
+            return self.sigmoid(self.bowl_embedding(player_ids))

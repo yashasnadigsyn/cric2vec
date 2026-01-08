@@ -1,0 +1,769 @@
+player_name,player_id,batting_style,bowling_style,position,country
+A Ashish Reddy,0,right-hand-bat,right-arm-fast-medium,Bowler,India
+A Badoni,1,right-hand-bat,right-arm-offbreak,Batsman,India
+A Chandila,2,right-hand-bat,right-arm-offbreak,Allrounder,India
+A Chopra,3,right-hand-bat,,Batsman,India
+A Choudhary,4,right-hand-bat,right-arm-fast-medium,Bowler,India
+A Dananjaya,5,left-hand-bat,right-arm-offbreak,Allrounder,Sri Lanka
+A Flintoff,6,right-hand-bat,right-arm-fast-medium,Allrounder,England
+A Kamboj,7,,,,
+A Kumble,8,right-hand-bat,legbreak-googly,Bowler,India
+A Manohar,9,right-hand-bat,legbreak,Allrounder,India
+A Mhatre,10,,,,
+A Mishra,11,right-hand-bat,legbreak,Bowler,India
+A Mithun,12,right-hand-bat,right-arm-fast-medium,Bowler,India
+A Mukund,13,left-hand-bat,legbreak-googly,Batsman,India
+A Nehra,14,right-hand-bat,left-arm-fast-medium,Bowler,India
+A Nel,15,right-hand-bat,right-arm-fast-medium,Bowler,South Africa
+A Nortje,16,right-hand-bat,right-arm-fast,Bowler,South Africa
+A Raghuvanshi,17,right-hand-bat,slow-left-arm-orthodox,Bowler,India
+A Singh,18,right-hand-bat,right-arm-fast-medium,Bowler,India
+A Symonds,19,right-hand-bat,right-arm-fast-medium,Allrounder,Australia
+A Tomar,20,right-hand-bat,right-arm-offbreak,Batsman,India
+A Uniyal,21,,,,
+A Zampa,22,right-hand-bat,legbreak-googly,Bowler,Australia
+AA Bilakhia,23,,,,
+AA Chavan,24,,,,
+AA Jhunjhunwala,25,,,,
+AA Kazi,26,left-hand-bat,slow-left-arm-orthodox,Bowler,India
+AA Kulkarni,27,right-hand-bat,right-arm-fast-medium,Batsman,Bulgaria
+AA Noffke,28,,,,
+AB Agarkar,29,right-hand-bat,right-arm-fast,Bowler,India
+AB Barath,30,,,,
+AB Dinda,31,right-hand-bat,right-arm-fast-medium,Bowler,India
+AB McDonald,32,right-hand-bat,right-arm-fast-medium,Allrounder,Australia
+AB de Villiers,33,right-hand-bat,right-arm-fast-medium,Wicketkeeper,South Africa
+AC Blizzard,34,left-hand-bat,left-arm-fast-medium,Batsman,Australia
+AC Gilchrist,35,left-hand-bat,right-arm-offbreak,Wicketkeeper,Australia
+AC Thomas,36,right-hand-bat,,Bowler,India
+AC Voges,37,right-hand-bat,slow-left-arm-orthodox,Batsman,Australia
+AD Hales,38,right-hand-bat,right-arm-fast-medium,Top Order Batter,England
+AD Mascarenhas,39,right-hand-bat,right-arm-fast-medium,Allrounder,England
+AD Mathews,40,right-hand-bat,right-arm-fast-medium,Allrounder,Sri Lanka
+AD Nath,41,right-hand-bat,right-arm-fast-medium,Batsman,India
+AD Russell,42,right-hand-bat,right-arm-fast,Allrounder,West Indies
+AF Milne,43,right-hand-bat,right-arm-fast,Bowler,New Zealand
+AG Murtaza,44,left-hand-bat,slow-left-arm-orthodox,Bowler,India
+AG Paunikar,45,right-hand-bat,,Wicketkeeper,India
+AJ Finch,46,right-hand-bat,slow-left-arm-orthodox,Batsman,Australia
+AJ Hosein,47,left-hand-bat,slow-left-arm-orthodox,Bowler,West Indies
+AJ Turner,48,right-hand-bat,right-arm-offbreak,Middle Order Batter,Australia
+AJ Tye,49,right-hand-bat,right-arm-fast-medium,Bowler,Australia
+AK Markram,50,right-hand-bat,right-arm-offbreak,Batsman,South Africa
+AL Menaria,51,left-hand-bat,slow-left-arm-orthodox,Batsman,India
+AM Nayar,52,left-hand-bat,right-arm-fast-medium,Allrounder,India
+AM Rahane,53,right-hand-bat,right-arm-fast-medium,Batsman,India
+AM Salvi,54,,,,
+AN Ahmed,55,right-hand-bat,right-arm-fast-medium,Bowler,India
+AN Ghosh,56,,,Batsman,India
+AP Dole,57,,,,
+AP Majumdar,58,right-hand-bat,legbreak-googly,Batsman,India
+AP Tare,59,right-hand-bat,,Wicketkeeper,India
+AR Bawne,60,,,,
+AR Patel,61,left-hand-bat,slow-left-arm-orthodox,Allrounder,India
+AS Joseph,62,right-hand-bat,right-arm-fast-medium,Bowler,West Indies
+AS Rajpoot,63,right-hand-bat,right-arm-fast-medium,Bowler,India
+AS Raut,64,,,Allrounder,India
+AS Roy,65,left-hand-bat,slow-left-arm-orthodox,Allrounder,India
+AS Yadav,66,right-hand-bat,right-arm-fast,Allrounder,India
+AT Carey,67,left-hand-bat,,Wicketkeeper,Australia
+AT Rayudu,68,,,,
+AU Rashid,69,right-hand-bat,legbreak,Bowler,England
+AUK Pathan,70,left-hand-bat,,Batsman,Qatar
+Abdul Basith,71,right-hand-bat,right-arm-offbreak,Allrounder,India
+Abdul Samad,72,right-hand-bat,legbreak,Allrounder,India
+Abdur Razzak,73,left-hand-bat,slow-left-arm-orthodox,Bowler,Bangladesh
+Abhishek Sharma,74,left-hand-bat,slow-left-arm-orthodox,Allrounder,India
+Abishek Porel,75,left-hand-bat,,Wicketkeeper,India
+Akash Deep,76,,,Bowler,Italy
+Akash Madhwal,77,right-hand-bat,right-arm-fast-medium,Bowler,India
+Akash Singh,78,right-hand-bat,left-arm-fast-medium,Bowler,India
+Aman Hakim Khan,79,,,Allrounder,Sweden
+Anand Rajan,80,right-hand-bat,right-arm-fast-medium,Bowler,India
+Aniket Verma,81,left-hand-bat,legbreak,Batsman,India
+Anirudh Singh,82,left-hand-bat,,Wicketkeeper,India
+Ankit Sharma,83,left-hand-bat,slow-left-arm-orthodox,Bowler,India
+Ankit Soni,84,right-hand-bat,,Bowler,Germany
+Anmolpreet Singh,85,right-hand-bat,right-arm-offbreak,Batsman,India
+Anuj Rawat,86,left-hand-bat,,Wicketkeeper,India
+Anureet Singh,87,right-hand-bat,right-arm-fast-medium,Bowler,India
+Arjun Tendulkar,88,left-hand-bat,left-arm-fast-medium,Bowler,India
+Arshad Khan,89,left-hand-bat,left-arm-fast-medium,Allrounder,India
+Arshad Khan (2),90,left-hand-bat,left-arm-fast-medium,Allrounder,India
+Arshdeep Singh,91,left-hand-bat,left-arm-fast-medium,Bowler,India
+Ashutosh Sharma,92,right-hand-bat,,Batsman,Germany
+Ashwani Kumar,93,right-hand-bat,right-arm-fast-medium,Batsman,India
+Atharva Taide,94,left-hand-bat,slow-left-arm-orthodox,Allrounder,India
+Avesh Khan,95,right-hand-bat,right-arm-fast-medium,Bowler,USA
+Azhar Mahmood,96,right-hand-bat,right-arm-fast-medium,Batsman,Spain
+Azmatullah Omarzai,97,right-hand-bat,right-arm-fast-medium,Allrounder,Afghanistan
+B Akhil,98,,,,
+B Chipli,99,right-hand-bat,right-arm-fast-medium,Bowler,India
+B Geeves,100,right-hand-bat,right-arm-fast-medium,Bowler,Australia
+B Indrajith,101,right-hand-bat,legbreak-googly,Batsman,India
+B Kumar,102,right-hand-bat,right-arm-fast-medium,Bowler,India
+B Laughlin,103,right-hand-bat,right-arm-fast-medium,Bowler,Australia
+B Lee,104,right-hand-bat,right-arm-fast,Bowler,Australia
+B Sai Sudharsan,105,left-hand-bat,legbreak,Batsman,India
+B Stanlake,106,left-hand-bat,right-arm-fast,Bowler,Australia
+B Sumanth,107,,,,
+BA Bhatt,108,left-hand-bat,slow-left-arm-orthodox,Bowler,India
+BA Stokes,109,left-hand-bat,right-arm-fast-medium,Allrounder,England
+BAW Mendis,110,right-hand-bat,right-arm-offbreak,Bowler,Sri Lanka
+BB McCullum,111,right-hand-bat,right-arm-offbreak,Wicketkeeper,New Zealand
+BB Samantray,112,,,,
+BB Sran,113,,,,
+BCJ Cutting,114,right-hand-bat,right-arm-fast-medium,Allrounder,Australia
+BE Hendricks,115,left-hand-bat,left-arm-fast-medium,Bowler,South Africa
+BJ Haddin,116,right-hand-bat,,Wicketkeeper,Australia
+BJ Hodge,117,right-hand-bat,right-arm-fast-medium,Allrounder,Australia
+BJ Rohrer,118,left-hand-bat,,Batsman,Australia
+BKG Mendis,119,right-hand-bat,,Wicketkeeper,Sri Lanka
+BMAJ Mendis,120,,,,
+BR Dunk,121,left-hand-bat,right-arm-offbreak,Wicketkeeper,Australia
+BR Sharath,122,right-hand-bat,right-arm-fast-medium,Bowler,India
+BW Hilfenhaus,123,right-hand-bat,right-arm-fast-medium,Bowler,Australia
+Basil Thampi,124,right-hand-bat,right-arm-fast-medium,Bowler,India
+Bipul Sharma,125,left-hand-bat,slow-left-arm-orthodox,Bowler,India
+C Bosch,126,right-hand-bat,right-arm-fast-medium,Allrounder,South Africa
+C Ganapathy,127,,,,
+C Green,128,right-hand-bat,right-arm-fast-medium,Allrounder,Australia
+C Madan,129,,,,
+C Munro,130,left-hand-bat,right-arm-fast-medium,Batsman,New Zealand
+C Nanda,131,,,,
+C Sakariya,132,left-hand-bat,left-arm-fast-medium,Bowler,India
+C de Grandhomme,133,right-hand-bat,right-arm-fast-medium,Allrounder,New Zealand
+CA Ingram,134,left-hand-bat,legbreak,Top Order Batter,South Africa
+CA Lynn,135,right-hand-bat,slow-left-arm-orthodox,Batsman,Australia
+CA Pujara,136,right-hand-bat,legbreak,Batsman,India
+CH Gayle,137,left-hand-bat,right-arm-offbreak,Allrounder,West Indies
+CH Morris,138,right-hand-bat,right-arm-fast-medium,Allrounder,South Africa
+CJ Anderson,139,left-hand-bat,left-arm-fast-medium,Allrounder,New Zealand
+CJ Dala,140,right-hand-bat,right-arm-fast-medium,Bowler,South Africa
+CJ Ferguson,141,right-hand-bat,right-arm-fast-medium,Batsman,Australia
+CJ Green,142,right-hand-bat,right-arm-offbreak,Bowling Allrounder,Australia
+CJ Jordan,143,right-hand-bat,right-arm-fast-medium,Bowler,England
+CJ McKay,144,right-hand-bat,right-arm-fast-medium,Bowler,Australia
+CK Kapugedera,145,right-hand-bat,right-arm-fast-medium,Batsman,Sri Lanka
+CK Langeveldt,146,right-hand-bat,right-arm-fast-medium,Bowler,South Africa
+CL White,147,right-hand-bat,legbreak-googly,Batsman,Australia
+CM Gautam,148,right-hand-bat,,Wicketkeeper,India
+CR Brathwaite,149,right-hand-bat,right-arm-fast-medium,Bowling Allrounder,West Indies
+CR Woakes,150,right-hand-bat,right-arm-fast-medium,Allrounder,England
+CRD Fernando,151,right-hand-bat,right-arm-fast-medium,Bowler,Sri Lanka
+CV Varun,152,,,,
+D Brevis,153,right-hand-bat,legbreak,Batsman,South Africa
+D Ferreira,154,right-hand-bat,,Allrounder,South Africa
+D Jansen,155,,,Bowler,South Africa
+D Kalyankrishna,156,,,,
+D Padikkal,157,left-hand-bat,right-arm-offbreak,Batsman,India
+D Pretorius,158,right-hand-bat,right-arm-fast-medium,Allrounder,South Africa
+D Salunkhe,159,right-hand-bat,legbreak,Allrounder,India
+D Wiese,160,right-hand-bat,right-arm-fast-medium,Allrounder,Namibia
+D du Preez,161,,,Allrounder,South Africa
+DA Miller,162,left-hand-bat,right-arm-offbreak,Batsman,South Africa
+DA Warner,163,left-hand-bat,legbreak,Batsman,Australia
+DAJ Bracewell,164,right-hand-bat,right-arm-fast-medium,Bowler,New Zealand
+DB Das,165,right-hand-bat,legbreak-googly,Wicketkeeper,India
+DB Ravi Teja,166,right-hand-bat,legbreak-googly,Batsman,India
+DE Bollinger,167,left-hand-bat,left-arm-fast-medium,Bowler,Australia
+DG Nalkande,168,,,,
+DH Yagnik,169,,,,
+DJ Bravo,170,right-hand-bat,right-arm-fast-medium,Allrounder,West Indies
+DJ Harris,171,right-hand-bat,right-arm-fast-medium,Bowler,England
+DJ Hooda,172,,,,
+DJ Hussey,173,right-hand-bat,right-arm-offbreak,Batsman,Australia
+DJ Jacobs,174,right-hand-bat,right-arm-fast-medium,Wicketkeeper,South Africa
+DJ Malan,175,left-hand-bat,legbreak,Top Order Batter,England
+DJ Mitchell,176,right-hand-bat,right-arm-fast-medium,Allrounder,England
+DJ Muthuswami,177,right-hand-bat,right-arm-fast-medium,Bowler,India
+DJ Thornely,178,,,,
+DJ Willey,179,left-hand-bat,left-arm-fast-medium,Bowling Allrounder,England
+DJG Sammy,180,right-hand-bat,right-arm-fast-medium,Allrounder,West Indies
+DJM Short,181,left-hand-bat,slow-left-arm-orthodox,Batsman,Australia
+DL Chahar,182,,,,
+DL Vettori,183,left-hand-bat,slow-left-arm-orthodox,Bowler,New Zealand
+DM Bravo,184,left-hand-bat,right-arm-fast-medium,Batsman,West Indies
+DNT Zoysa,185,,,,
+DP Conway,186,left-hand-bat,right-arm-fast-medium,Wicketkeeper,New Zealand
+DP Nannes,187,right-hand-bat,left-arm-fast,Bowler,Australia
+DP Vijaykumar,188,right-hand-bat,,Batsman,India
+DPMD Jayawardene,189,right-hand-bat,right-arm-fast-medium,Batsman,Sri Lanka
+DR Martyn,190,right-hand-bat,right-arm-fast-medium,Batsman,Australia
+DR Sams,191,right-hand-bat,left-arm-fast-medium,Allrounder,Australia
+DR Shorey,192,right-hand-bat,right-arm-offbreak,Batsman,India
+DR Smith,193,right-hand-bat,right-arm-fast-medium,Batsman,West Indies
+DS Kulkarni,194,right-hand-bat,right-arm-fast-medium,Bowler,India
+DS Lehmann,195,,,,
+DS Rathi,196,,,,
+DT Christian,197,right-hand-bat,right-arm-fast-medium,Allrounder,Australia
+DT Patil,198,,,,
+DW Steyn,199,right-hand-bat,right-arm-fast,Bowler,South Africa
+Dhruv Jurel,200,right-hand-bat,,Wicketkeeper,India
+E Lewis,201,left-hand-bat,,Batsman,West Indies
+E Malinga,202,left-hand-bat,right-arm-fast-medium,Allrounder,Sri Lanka
+EJG Morgan,203,left-hand-bat,right-arm-fast-medium,Batsman,England
+ER Dwivedi,204,right-hand-bat,,Wicketkeeper,India
+F Behardien,205,right-hand-bat,right-arm-fast-medium,Batting Allrounder,South Africa
+F du Plessis,206,right-hand-bat,legbreak,Batsman,South Africa
+FA Allen,207,right-hand-bat,slow-left-arm-orthodox,Allrounder,West Indies
+FH Edwards,208,right-hand-bat,right-arm-fast,Bowler,West Indies
+FY Fazal,209,,,,
+Fazalhaq Farooqi,210,right-hand-bat,left-arm-fast-medium,Bowler,Afghanistan
+G Coetzee,211,right-hand-bat,right-arm-fast,Bowler,South Africa
+G Gambhir,212,left-hand-bat,legbreak,Batsman,India
+GB Hogg,213,left-hand-bat,slow-left-arm-orthodox,Bowler,Australia
+GC Smith,214,left-hand-bat,right-arm-offbreak,Batsman,South Africa
+GC Viljoen,215,right-hand-bat,right-arm-fast,Bowler,South Africa
+GD McGrath,216,right-hand-bat,right-arm-fast-medium,Bowler,Australia
+GD Phillips,217,right-hand-bat,,Wicketkeeper,New Zealand
+GH Vihari,218,right-hand-bat,right-arm-offbreak,Allrounder,India
+GHS Garton,219,,,,
+GJ Bailey,220,right-hand-bat,right-arm-fast-medium,Batsman,Australia
+GJ Maxwell,221,right-hand-bat,right-arm-offbreak,Allrounder,Australia
+GR Napier,222,,,,
+GS Sandhu,223,,,Allrounder,India
+Gagandeep Singh,224,right-hand-bat,right-arm-fast-medium,Batsman,India
+Gulbadin Naib,225,right-hand-bat,right-arm-fast-medium,Batting Allrounder,Afghanistan
+Gurkeerat Singh,226,right-hand-bat,right-arm-offbreak,Middle Order Batter,India
+Gurnoor Brar,227,left-hand-bat,right-arm-fast,Bowler,India
+H Das,228,,,,
+H Klaasen,229,right-hand-bat,,Wicketkeeper,South Africa
+H Sharma,230,right-hand-bat,right-arm-fast-medium,Allrounder,India
+HC Brook,231,,,,
+HE van der Dussen,232,right-hand-bat,legbreak,Batsman,South Africa
+HF Gurney,233,right-hand-bat,left-arm-fast-medium,Bowler,England
+HH Gibbs,234,right-hand-bat,right-arm-fast,Batsman,South Africa
+HH Pandya,235,right-hand-bat,right-arm-fast-medium,Allrounder,India
+HM Amla,236,right-hand-bat,right-arm-offbreak,Batsman,South Africa
+HR Shokeen,237,,,,
+HV Patel,238,right-hand-bat,,Wicketkeeper,India
+Harbhajan Singh,239,right-hand-bat,right-arm-offbreak,Bowler,India
+Harmeet Singh,240,right-hand-bat,right-arm-fast-medium,Bowler,India
+Harmeet Singh (2),241,right-hand-bat,right-arm-fast-medium,Bowler,India
+Harpreet Brar,242,left-hand-bat,slow-left-arm-orthodox,Bowler,India
+Harpreet Singh,243,left-hand-bat,right-arm-fast-medium,Batsman,India
+Harsh Dubey,244,left-hand-bat,slow-left-arm-orthodox,Bowler,India
+Harshit Rana,245,right-hand-bat,right-arm-fast-medium,Bowler,India
+I Malhotra,246,right-hand-bat,right-arm-fast-medium,Bowler,India
+I Sharma,247,right-hand-bat,right-arm-fast-medium,Bowler,India
+I Udana,248,right-hand-bat,left-arm-fast-medium,Allrounder,Sri Lanka
+IC Pandey,249,left-hand-bat,,Batsman,Nepal
+IC Porel,250,right-hand-bat,right-arm-fast-medium,Bowler,India
+IK Pathan,251,left-hand-bat,left-arm-fast-medium,Bowler,India
+IR Jaggi,252,,,,
+IS Sodhi,253,right-hand-bat,legbreak,Bowler,New Zealand
+Imran Tahir,254,right-hand-bat,legbreak-googly,Bowler,South Africa
+Iqbal Abdulla,255,left-hand-bat,slow-left-arm-orthodox,Bowler,India
+Ishan Kishan,256,left-hand-bat,,Wicketkeeper,India
+J Arunkumar,257,,,Batsman,India
+J Botha,258,right-hand-bat,right-arm-offbreak,Allrounder,South Africa
+J Fraser-McGurk,259,right-hand-bat,legbreak-googly,Batsman,Australia
+J Little,260,right-hand-bat,left-arm-fast-medium,Bowler,Ireland Republic
+J Overton,261,right-hand-bat,right-arm-fast-medium,Bowler,England
+J Suchith,262,,,,
+J Syed Mohammad,263,right-hand-bat,,Batsman,Kuwait
+J Theron,264,,,Bowler,USA
+J Yadav,265,right-hand-bat,right-arm-offbreak,Bowler,India
+JA Morkel,266,left-hand-bat,right-arm-fast-medium,Allrounder,South Africa
+JA Richardson,267,right-hand-bat,right-arm-fast,Bowler,Australia
+JC Archer,268,right-hand-bat,right-arm-fast,Bowler,England
+JC Buttler,269,right-hand-bat,,Wicketkeeper,England
+JD Ryder,270,left-hand-bat,right-arm-fast-medium,Allrounder,New Zealand
+JD Unadkat,271,right-hand-bat,left-arm-fast-medium,Bowler,India
+JDP Oram,272,left-hand-bat,right-arm-fast-medium,Allrounder,New Zealand
+JDS Neesham,273,left-hand-bat,right-arm-fast-medium,Batting Allrounder,New Zealand
+JE Root,274,right-hand-bat,right-arm-offbreak,Batsman,England
+JE Taylor,275,right-hand-bat,right-arm-fast,Bowler,West Indies
+JEC Franklin,276,left-hand-bat,left-arm-fast-medium,Allrounder,New Zealand
+JG Bethell,277,left-hand-bat,slow-left-arm-orthodox,Allrounder,England
+JH Kallis,278,right-hand-bat,right-arm-fast-medium,Allrounder,South Africa
+JJ Bumrah,279,right-hand-bat,right-arm-fast,Bowler,India
+JJ Roy,280,right-hand-bat,,Batsman,England
+JJ van der Wath,281,right-hand-bat,right-arm-fast-medium,Allrounder,Sri Lanka
+JL Denly,282,right-hand-bat,legbreak,Bowler,England
+JL Pattinson,283,left-hand-bat,right-arm-fast-medium,Bowler,Australia
+JM Bairstow,284,right-hand-bat,right-arm-fast-medium,Wicketkeeper,England
+JM Kemp,285,right-hand-bat,right-arm-fast-medium,Allrounder,South Africa
+JM Sharma,286,,,Wicketkeeper,India
+JO Holder,287,right-hand-bat,right-arm-fast-medium,Bowling Allrounder,West Indies
+JP Behrendorff,288,right-hand-bat,left-arm-fast-medium,Bowler,Australia
+JP Duminy,289,left-hand-bat,right-arm-offbreak,Allrounder,South Africa
+JP Faulkner,290,right-hand-bat,left-arm-fast-medium,Allrounder,Australia
+JP Inglis,291,right-hand-bat,,Wicketkeeper,Australia
+JPR Scantlebury-Searles,292,,,,
+JR Hazlewood,293,left-hand-bat,right-arm-fast-medium,Bowler,Australia
+JR Hopes,294,,,,
+JR Philippe,295,right-hand-bat,,Wicketkeeper,Australia
+JW Hastings,296,right-hand-bat,right-arm-fast-medium,Allrounder,Australia
+Jalaj S Saxena,297,right-hand-bat,right-arm-offbreak,Allrounder,India
+Jaskaran Singh,298,right-hand-bat,right-arm-fast-medium,Bowler,India
+Joginder Sharma,299,,,Wicketkeeper,Italy
+K Goel,300,,,,
+K Gowtham,301,,,Allrounder,India
+K Kartikeya,302,right-hand-bat,slow-left-arm-orthodox,Bowler,India
+K Khejroliya,303,left-hand-bat,left-arm-fast-medium,Bowler,India
+K Rabada,304,left-hand-bat,right-arm-fast,Bowler,South Africa
+K Santokie,305,,,,
+K Upadhyay,306,right-hand-bat,right-arm-fast-medium,Bowler,India
+K Yadav,307,,,Bowler,Cyprus
+KA Jamieson,308,right-hand-bat,right-arm-fast-medium,Bowler,New Zealand
+KA Maharaj,309,right-hand-bat,slow-left-arm-orthodox,Bowler,South Africa
+KA Pollard,310,right-hand-bat,right-arm-fast-medium,Batting Allrounder,West Indies
+KAJ Roach,311,right-hand-bat,right-arm-fast-medium,Bowler,West Indies
+KB Arun Karthik,312,right-hand-bat,,Wicketkeeper,India
+KC Cariappa,313,right-hand-bat,legbreak,Bowler,India
+KC Sangakkara,314,left-hand-bat,right-arm-offbreak,Wicketkeeper,Sri Lanka
+KD Karthik,315,right-hand-bat,,Wicketkeeper,India
+KH Pandya,316,,,,
+KJ Abbott,317,right-hand-bat,right-arm-fast-medium,Batsman,South Africa
+KK Ahmed,318,right-hand-bat,right-arm-fast-medium,Batsman,India
+KK Cooper,319,right-hand-bat,right-arm-fast-medium,Bowler,West Indies
+KK Nair,320,right-hand-bat,right-arm-offbreak,Batsman,India
+KL Nagarkoti,321,right-hand-bat,right-arm-fast,Bowler,India
+KL Rahul,322,right-hand-bat,right-arm-fast-medium,Allrounder,Spain
+KM Asif,323,right-hand-bat,right-arm-fast-medium,Bowler,India
+KM Jadhav,324,right-hand-bat,right-arm-offbreak,Allrounder,India
+KMA Paul,325,right-hand-bat,right-arm-fast-medium,Allrounder,West Indies
+KMDN Kulasekara,326,right-hand-bat,right-arm-fast-medium,Bowler,Sri Lanka
+KP Appanna,327,right-hand-bat,slow-left-arm-orthodox,Bowler,India
+KP Pietersen,328,right-hand-bat,right-arm-offbreak,Batsman,England
+KR Mayers,329,left-hand-bat,right-arm-fast-medium,Batting Allrounder,West Indies
+KR Sen,330,right-hand-bat,right-arm-fast-medium,Bowler,India
+KS Bharat,331,right-hand-bat,,Wicketkeeper,India
+KS Rathore,332,right-hand-bat,,Allrounder,India
+KS Sharma,333,right-hand-bat,right-arm-offbreak,Allrounder,India
+KS Williamson,334,right-hand-bat,right-arm-offbreak,Batsman,New Zealand
+KT Maphaka,335,left-hand-bat,left-arm-fast-medium,Batsman,South Africa
+KV Sharma,336,right-hand-bat,right-arm-offbreak,Allrounder,India
+KW Richardson,337,right-hand-bat,right-arm-fast-medium,Bowler,Australia
+Kamran Akmal,338,right-hand-bat,,Wicketkeeper,Pakistan
+Kamran Khan,339,right-hand-bat,right-arm-fast-medium,Batsman,Qatar
+Karanveer Singh,340,right-hand-bat,legbreak-googly,Bowler,India
+Karim Janat,341,right-hand-bat,right-arm-fast-medium,Bowling Allrounder,Afghanistan
+Kartik Tyagi,342,right-hand-bat,right-arm-fast-medium,Bowler,India
+Kuldeep Yadav,343,left-hand-bat,left-arm-chinaman,Bowler,India
+Kumar Kushagra,344,right-hand-bat,,Wicketkeeper,India
+L Ablish,345,,,,
+L Balaji,346,right-hand-bat,right-arm-fast-medium,Bowler,India
+L Ngidi,347,right-hand-bat,right-arm-fast,Bowler,South Africa
+L Ronchi,348,right-hand-bat,,Wicketkeeper,New Zealand
+L Wood,349,left-hand-bat,left-arm-fast-medium,Bowling Allrounder,England
+LA Carseldine,350,,,,
+LA Pomersbach,351,left-hand-bat,right-arm-offbreak,Batsman,Australia
+LB Williams,352,,,Allrounder,Austria
+LE Plunkett,353,right-hand-bat,right-arm-fast,Bowler,England
+LH Ferguson,354,right-hand-bat,right-arm-fast,Bowler,New Zealand
+LI Meriwala,355,left-hand-bat,left-arm-fast-medium,Bowler,India
+LJ Wright,356,right-hand-bat,right-arm-fast-medium,Allrounder,England
+LMP Simmons,357,right-hand-bat,right-arm-fast-medium,Batsman,West Indies
+LPC Silva,358,right-hand-bat,legbreak,Batsman,Sri Lanka
+LR Shukla,359,right-hand-bat,right-arm-fast-medium,Allrounder,India
+LRPL Taylor,360,right-hand-bat,right-arm-offbreak,Middle Order Batter,New Zealand
+LS Livingstone,361,right-hand-bat,legbreak,Allrounder,England
+Lalit Yadav,362,right-hand-bat,right-arm-offbreak,Allrounder,India
+Liton Das,363,right-hand-bat,,Wicketkeeper,Bangladesh
+M Ashwin,364,,,Allrounder,India
+M Jansen,365,right-hand-bat,left-arm-fast,Allrounder,South Africa
+M Kaif,366,right-hand-bat,right-arm-offbreak,Batsman,India
+M Kartik,367,left-hand-bat,slow-left-arm-orthodox,Bowler,India
+M Klinger,368,right-hand-bat,,Batsman,Australia
+M Manhas,369,right-hand-bat,right-arm-offbreak,Allrounder,India
+M Markande,370,right-hand-bat,legbreak,Bowler,India
+M Morkel,371,left-hand-bat,right-arm-fast,Bowler,South Africa
+M Muralitharan,372,right-hand-bat,right-arm-offbreak,Bowler,Sri Lanka
+M Ntini,373,right-hand-bat,right-arm-fast,Bowler,South Africa
+M Pathirana,374,right-hand-bat,right-arm-fast-medium,Wicketkeeper,Sri Lanka
+M Prasidh Krishna,375,,,Bowler,Sweden
+M Rawat,376,right-hand-bat,,Wicketkeeper,India
+M Shahrukh Khan,377,right-hand-bat,right-arm-offbreak,Batsman,India
+M Siddharth,378,,,Batsman,India
+M Theekshana,379,right-hand-bat,right-arm-offbreak,Bowler,Sri Lanka
+M Tiwari,380,right-hand-bat,right-arm-offbreak,Batsman,India
+M Vijay,381,right-hand-bat,right-arm-offbreak,Batsman,India
+M Vohra,382,right-hand-bat,right-arm-fast-medium,Batsman,India
+M de Lange,383,right-hand-bat,right-arm-fast,Bowler,South Africa
+MA Agarwal,384,right-hand-bat,,Batsman,India
+MA Khote,385,,,,
+MA Starc,386,left-hand-bat,left-arm-fast,Bowler,Australia
+MA Wood,387,right-hand-bat,right-arm-fast,Bowler,England
+MB Parmar,388,,,,
+MC Henriques,389,right-hand-bat,right-arm-fast-medium,Allrounder,Australia
+MC Juneja,390,,,,
+MD Mishra,391,,,Allrounder,Hungary
+MD Shanaka,392,right-hand-bat,right-arm-fast-medium,Allrounder,Sri Lanka
+MDKJ Perera,393,left-hand-bat,,Batsman,Sri Lanka
+MEK Hussey,394,left-hand-bat,right-arm-fast-medium,Batsman,Australia
+MF Maharoof,395,right-hand-bat,right-arm-fast-medium,Allrounder,Sri Lanka
+MG Bracewell,396,right-hand-bat,right-arm-fast-medium,Bowler,New Zealand
+MG Johnson,397,left-hand-bat,left-arm-fast,Bowler,Australia
+MG Neser,398,right-hand-bat,right-arm-fast-medium,Allrounder,Australia
+MJ Clarke,399,right-hand-bat,slow-left-arm-orthodox,Batsman,Australia
+MJ Guptill,400,right-hand-bat,right-arm-offbreak,Batsman,New Zealand
+MJ Henry,401,right-hand-bat,right-arm-fast-medium,Bowler,New Zealand
+MJ Lumb,402,,,,
+MJ McClenaghan,403,left-hand-bat,left-arm-fast-medium,Bowler,New Zealand
+MJ Owen,404,,,,
+MJ Santner,405,left-hand-bat,slow-left-arm-orthodox,Allrounder,New Zealand
+MJ Suthar,406,left-hand-bat,slow-left-arm-orthodox,Bowler,India
+MK Lomror,407,,,,
+MK Pandey,408,right-hand-bat,right-arm-fast-medium,Batsman,India
+MK Tiwary,409,right-hand-bat,legbreak-googly,Allrounder,India
+ML Hayden,410,left-hand-bat,right-arm-fast-medium,Batsman,Australia
+MM Ali,411,left-hand-bat,right-arm-offbreak,Allrounder,England
+MM Patel,412,right-hand-bat,right-arm-fast-medium,Bowler,India
+MM Sharma,413,right-hand-bat,right-arm-fast-medium,Bowler,India
+MN Samuels,414,right-hand-bat,right-arm-offbreak,Allrounder,West Indies
+MN van Wyk,415,right-hand-bat,slow-left-arm-orthodox,Wicketkeeper,South Africa
+MP Breetzke,416,right-hand-bat,,Batsman,South Africa
+MP Stoinis,417,right-hand-bat,right-arm-fast-medium,Allrounder,Australia
+MP Yadav,418,right-hand-bat,right-arm-fast,Bowler,India
+MR Marsh,419,right-hand-bat,right-arm-fast-medium,Allrounder,Australia
+MS Bhandage,420,left-hand-bat,right-arm-fast-medium,Allrounder,India
+MS Bisla,421,,,,
+MS Dhoni,422,,,,
+MS Gony,423,,,,
+MS Wade,424,left-hand-bat,right-arm-fast-medium,Wicketkeeper,Australia
+MV Boucher,425,right-hand-bat,right-arm-fast-medium,Wicketkeeper,South Africa
+MW Short,426,right-hand-bat,right-arm-offbreak,Allrounder,Australia
+Mandeep Singh,427,right-hand-bat,right-arm-fast-medium,Allrounder,India
+Mashrafe Mortaza,428,right-hand-bat,right-arm-fast-medium,Bowler,Bangladesh
+Mayank Dagar,429,right-hand-bat,slow-left-arm-orthodox,Bowler,India
+Misbah-ul-Haq,430,right-hand-bat,legbreak,Batsman,Pakistan
+Mohammad Ashraful,431,right-hand-bat,right-arm-offbreak,Batsman,Bangladesh
+Mohammad Asif,432,right-hand-bat,right-arm-fast-medium,Bowler,Pakistan
+Mohammad Hafeez,433,right-hand-bat,right-arm-offbreak,Allrounder,Pakistan
+Mohammad Nabi,434,,,Batsman,Sweden
+Mohammed Shami,435,right-hand-bat,right-arm-fast,Bowler,India
+Mohammed Siraj,436,right-hand-bat,right-arm-fast-medium,Bowler,India
+Mohit Rathee,437,right-hand-bat,legbreak-googly,Allrounder,India
+Mohsin Khan,438,left-hand-bat,left-arm-fast-medium,Bowler,India
+Monu Kumar,439,right-hand-bat,right-arm-fast-medium,Bowler,India
+Mujeeb Ur Rahman,440,right-hand-bat,right-arm-offbreak,Bowler,Afghanistan
+Mukesh Choudhary,441,left-hand-bat,left-arm-fast-medium,Bowler,India
+Mukesh Kumar,442,,,Bowler,India
+Musheer Khan,443,right-hand-bat,right-arm-fast,Bowler,Pakistan
+Mustafizur Rahman,444,left-hand-bat,left-arm-fast-medium,Bowler,Bangladesh
+N Burger,445,left-hand-bat,left-arm-fast-medium,Bowler,South Africa
+N Jagadeesan,446,right-hand-bat,,Wicketkeeper,India
+N Pooran,447,left-hand-bat,,Wicketkeeper,West Indies
+N Rana,448,left-hand-bat,right-arm-offbreak,Batsman,India
+N Saini,449,right-hand-bat,,Wicketkeeper,India
+N Thushara,450,right-hand-bat,right-arm-fast-medium,Bowler,Sri Lanka
+N Wadhera,451,left-hand-bat,legbreak,Batsman,India
+NA Saini,452,,,Wicketkeeper,Germany
+NB Singh,453,right-hand-bat,right-arm-fast-medium,Bowler,India
+ND Doshi,454,,,,
+NJ Maddinson,455,left-hand-bat,slow-left-arm-orthodox,Batsman,Australia
+NJ Rimmington,456,right-hand-bat,right-arm-fast-medium,Bowler,Australia
+NL McCullum,457,right-hand-bat,right-arm-offbreak,Bowler,New Zealand
+NLTC Perera,458,left-hand-bat,right-arm-fast-medium,Bowling Allrounder,Sri Lanka
+NM Coulter-Nile,459,right-hand-bat,right-arm-fast,Bowling Allrounder,Australia
+NS Naik,460,,,,
+NT Ellis,461,right-hand-bat,right-arm-fast-medium,Bowler,Australia
+NV Ojha,462,right-hand-bat,,Wicketkeeper,India
+Naman Dhir,463,,,,
+Navdeep Saini,464,right-hand-bat,right-arm-fast,Bowler,India
+Naveen-ul-Haq,465,right-hand-bat,right-arm-fast-medium,Bowler,Afghanistan
+Niraj Patel,466,,,Wicketkeeper,Germany
+Nithish Kumar Reddy,467,right-hand-bat,right-arm-fast-medium,Batting Allrounder,India
+Noor Ahmad,468,left-hand-bat,slow-left-arm-orthodox,Bowler,Afghanistan
+O Thomas,469,right-hand-bat,right-arm-fast,Bowler,Malta
+OA Shah,470,right-hand-bat,right-arm-offbreak,Batsman,England
+OC McCoy,471,left-hand-bat,left-arm-fast-medium,Bowler,West Indies
+OF Smith,472,,,Bowler,Ireland Republic
+P Amarnath,473,,,,
+P Awana,474,right-hand-bat,right-arm-fast-medium,Bowler,India
+P Chopra,475,,,,
+P Dogra,476,right-hand-bat,legbreak,Batsman,India
+P Dubey,477,right-hand-bat,legbreak-googly,Bowler,India
+P Kumar,478,right-hand-bat,right-arm-fast-medium,Bowler,India
+P Negi,479,left-hand-bat,slow-left-arm-orthodox,Bowler,India
+P Parameswaran,480,right-hand-bat,left-arm-fast-medium,Bowler,India
+P Prasanth,481,left-hand-bat,slow-left-arm-orthodox,Allrounder,India
+P Ray Barman,482,right-hand-bat,legbreak-googly,Allrounder,India
+P Sahu,483,,,,
+P Simran Singh,484,right-hand-bat,left-arm-fast-medium,Bowler,India
+P Suyal,485,right-hand-bat,left-arm-fast-medium,Bowler,India
+PA Patel,486,left-hand-bat,,Wicketkeeper,India
+PA Reddy,487,right-hand-bat,legbreak,Batsman,India
+PBB Rajapaksa,488,,,,
+PC Valthaty,489,right-hand-bat,right-arm-fast-medium,Batsman,India
+PD Collingwood,490,right-hand-bat,right-arm-fast-medium,Allrounder,England
+PD Salt,491,right-hand-bat,right-arm-offbreak,Wicketkeeper,England
+PH Solanki,492,,,,
+PHKD Mendis,493,,,,
+PJ Cummins,494,right-hand-bat,right-arm-fast,Bowler,Australia
+PJ Sangwan,495,right-hand-bat,left-arm-fast-medium,Bowler,India
+PK Garg,496,right-hand-bat,right-arm-fast-medium,Batsman,India
+PM Sarvesh Kumar,497,right-hand-bat,,Wicketkeeper,India
+PN Mankad,498,right-hand-bat,right-arm-fast-medium,Allrounder,India
+PP Chawla,499,left-hand-bat,legbreak,Allrounder,India
+PP Ojha,500,left-hand-bat,slow-left-arm-orthodox,Bowler,India
+PP Shaw,501,right-hand-bat,right-arm-offbreak,Batsman,India
+PR Shah,502,,,,
+PSP Handscomb,503,right-hand-bat,,Batsman,Australia
+PV Tambe,504,right-hand-bat,legbreak,Bowler,India
+PVD Chameera,505,right-hand-bat,right-arm-fast,Bowler,Sri Lanka
+PVSN Raju,506,,,,
+PWA Mulder,507,right-hand-bat,right-arm-fast-medium,Allrounder,South Africa
+PWH de Silva,508,right-hand-bat,legbreak,Allrounder,Sri Lanka
+Pankaj Singh,509,right-hand-bat,left-arm-fast-medium,Bowler,India
+Parvez Rasool,510,right-hand-bat,right-arm-offbreak,Bowler,India
+Prince Yadav,511,,,Allrounder,India
+Priyansh Arya,512,,,,
+Q de Kock,513,left-hand-bat,,Wicketkeeper,South Africa
+R Ashwin,514,,,Allrounder,India
+R Bhatia,515,right-hand-bat,right-arm-fast-medium,Allrounder,India
+R Bishnoi,516,right-hand-bat,legbreak-googly,Bowler,India
+R Dhawan,517,right-hand-bat,right-arm-fast-medium,Allrounder,India
+R Dravid,518,right-hand-bat,right-arm-offbreak,Batsman,India
+R Goyal,519,right-hand-bat,,Allrounder,Hungary
+R McLaren,520,left-hand-bat,right-arm-fast-medium,Allrounder,South Africa
+R Minz,521,left-hand-bat,,Wicketkeeper,India
+R Ninan,522,,,,
+R Parag,523,right-hand-bat,legbreak,Batsman,India
+R Powell,524,right-hand-bat,right-arm-fast-medium,Batsman,West Indies
+R Rampaul,525,left-hand-bat,right-arm-fast-medium,Bowler,West Indies
+R Ravindra,526,left-hand-bat,slow-left-arm-orthodox,Batting Allrounder,New Zealand
+R Sai Kishore,527,,,Bowler,India
+R Sanjay Yadav,528,,,Allrounder,India
+R Sathish,529,,,,
+R Sharma,530,right-hand-bat,right-arm-fast-medium,Allrounder,India
+R Shepherd,531,right-hand-bat,right-arm-fast-medium,Bowling Allrounder,West Indies
+R Shukla,532,right-hand-bat,right-arm-fast-medium,Bowler,India
+R Tewatia,533,left-hand-bat,legbreak,Allrounder,India
+R Vinay Kumar,534,right-hand-bat,right-arm-fast-medium,Bowler,India
+RA Bawa,535,,,,
+RA Jadeja,536,left-hand-bat,slow-left-arm-orthodox,Allrounder,India
+RA Shaikh,537,right-hand-bat,right-arm-offbreak,Bowler,India
+RA Tripathi,538,right-hand-bat,right-arm-fast-medium,Batsman,India
+RD Chahar,539,right-hand-bat,legbreak-googly,Bowler,India
+RD Gaikwad,540,,,,
+RD Rickelton,541,left-hand-bat,,Wicketkeeper,South Africa
+RE Levi,542,,,,
+RE van der Merwe,543,right-hand-bat,slow-left-arm-orthodox,Allrounder,Netherlands
+RG More,544,right-hand-bat,right-arm-fast-medium,Bowler,India
+RG Sharma,545,right-hand-bat,right-arm-offbreak,Batsman,India
+RJ Gleeson,546,right-hand-bat,right-arm-fast-medium,Bowler,England
+RJ Harris,547,right-hand-bat,right-arm-fast,Bowler,Australia
+RJ Peterson,548,left-hand-bat,slow-left-arm-orthodox,Bowler,South Africa
+RJ Quiney,549,left-hand-bat,right-arm-fast-medium,Batsman,Australia
+RJW Topley,550,,,,
+RK Bhui,551,right-hand-bat,legbreak-googly,Batsman,India
+RK Singh,552,right-hand-bat,left-arm-fast-medium,Bowler,India
+RM Patidar,553,right-hand-bat,right-arm-offbreak,Batsman,India
+RN ten Doeschate,554,right-hand-bat,right-arm-fast-medium,Allrounder,Netherlands
+RP Meredith,555,right-hand-bat,right-arm-fast,Bowler,Australia
+RP Singh,556,right-hand-bat,left-arm-fast-medium,Bowler,India
+RR Bhatkal,557,right-hand-bat,right-arm-fast-medium,Allrounder,India
+RR Bose,558,,,,
+RR Pant,559,left-hand-bat,,Wicketkeeper,India
+RR Powar,560,right-hand-bat,right-arm-offbreak,Bowler,India
+RR Raje,561,right-hand-bat,right-arm-fast-medium,Allrounder,India
+RR Rossouw,562,left-hand-bat,right-arm-offbreak,Batsman,South Africa
+RR Sarwan,563,right-hand-bat,legbreak,Batsman,West Indies
+RS Bopara,564,right-hand-bat,right-arm-fast-medium,Batting Allrounder,England
+RS Gavaskar,565,,,,
+RS Hangargekar,566,right-hand-bat,right-arm-fast-medium,Allrounder,India
+RS Sodhi,567,,,,
+RT Ponting,568,right-hand-bat,right-arm-fast-medium,Batsman,Australia
+RV Gomez,569,,,,
+RV Patel,570,right-hand-bat,right-arm-fast-medium,Batsman,India
+RV Uthappa,571,right-hand-bat,right-arm-fast-medium,Batsman,India
+RW Price,572,right-hand-bat,slow-left-arm-orthodox,Bowler,Zimbabwe
+Rahmanullah Gurbaz,573,right-hand-bat,,Wicketkeeper,Afghanistan
+Ramandeep Singh,574,right-hand-bat,right-arm-fast-medium,Batsman,India
+Rashid Khan,575,right-hand-bat,legbreak-googly,Bowler,Afghanistan
+Rasikh Salam,576,right-hand-bat,right-arm-fast-medium,Bowler,India
+Ravi Bishnoi,577,right-hand-bat,legbreak-googly,Bowler,India
+S Anirudha,578,right-hand-bat,right-arm-fast-medium,Wicketkeeper,India
+S Aravind,579,right-hand-bat,,Batsman,India
+S Badree,580,right-hand-bat,legbreak,Batsman,West Indies
+S Badrinath,581,right-hand-bat,right-arm-offbreak,Batsman,India
+S Chanderpaul,582,left-hand-bat,legbreak,Batsman,West Indies
+S Dhawan,583,left-hand-bat,right-arm-offbreak,Batsman,India
+S Dube,584,left-hand-bat,right-arm-fast-medium,Allrounder,India
+S Gopal,585,right-hand-bat,legbreak,Allrounder,India
+S Joseph,586,right-hand-bat,right-arm-fast-medium,Allrounder,Malta
+S Kaul,587,right-hand-bat,right-arm-fast-medium,Bowler,India
+S Kaushik,588,,,Allrounder,India
+S Ladda,589,right-hand-bat,legbreak,Bowler,India
+S Lamichhane,590,right-hand-bat,legbreak-googly,Bowler,Nepal
+S Midhun,591,right-hand-bat,right-arm-offbreak,Allrounder,India
+S Nadeem,592,right-hand-bat,slow-left-arm-orthodox,Bowler,India
+S Narwal,593,left-hand-bat,right-arm-fast-medium,Allrounder,India
+S Rana,594,,,Bowler,Finland
+S Randiv,595,right-hand-bat,right-arm-offbreak,Allrounder,Sri Lanka
+S Sandeep Warrier,596,right-hand-bat,right-arm-fast-medium,Bowler,India
+S Sohal,597,right-hand-bat,legbreak,Batsman,USA
+S Sreesanth,598,,,,
+S Sriram,599,right-hand-bat,legbreak,Bowler,India
+S Tyagi,600,,,,
+S Vidyut,601,right-hand-bat,right-arm-fast-medium,Allrounder,India
+SA Abbott,602,right-hand-bat,right-arm-fast-medium,Allrounder,Australia
+SA Asnodkar,603,,,,
+SA Yadav,604,right-hand-bat,right-arm-fast,Allrounder,India
+SB Bangar,605,right-hand-bat,right-arm-fast-medium,Allrounder,India
+SB Dubey,606,left-hand-bat,right-arm-offbreak,Bowler,India
+SB Jakati,607,left-hand-bat,slow-left-arm-orthodox,Bowler,India
+SB Joshi,608,,,,
+SB Styris,609,right-hand-bat,right-arm-fast-medium,Allrounder,New Zealand
+SB Wagh,610,left-hand-bat,left-arm-fast-medium,Allrounder,India
+SC Ganguly,611,left-hand-bat,right-arm-fast-medium,Batsman,India
+SC Kuggeleijn,612,right-hand-bat,right-arm-fast-medium,Bowling Allrounder,New Zealand
+SD Chitnis,613,right-hand-bat,right-arm-offbreak,Allrounder,India
+SD Hope,614,right-hand-bat,,Wicketkeeper,West Indies
+SD Lad,615,,,,
+SE Bond,616,right-hand-bat,right-arm-fast,Bowler,New Zealand
+SE Marsh,617,left-hand-bat,slow-left-arm-orthodox,Top Order Batter,Australia
+SE Rutherford,618,left-hand-bat,right-arm-fast-medium,Middle Order Batter,West Indies
+SH Johnson,619,right-hand-bat,right-arm-fast,Allrounder,New Zealand
+SJ Srivastava,620,,,Bowler,Spain
+SK Raina,621,left-hand-bat,right-arm-offbreak,Batsman,India
+SK Rasheed,622,,,Batsman,India
+SK Trivedi,623,,,Batsman,Hungary
+SK Warne,624,right-hand-bat,legbreak-googly,Bowler,Australia
+SL Malinga,625,right-hand-bat,right-arm-fast,Bowler,Sri Lanka
+SM Boland,626,right-hand-bat,right-arm-fast-medium,Bowler,Australia
+SM Curran,627,left-hand-bat,left-arm-fast-medium,Allrounder,England
+SM Harwood,628,,,,
+SM Katich,629,left-hand-bat,slow-left-arm-orthodox,Batsman,Australia
+SM Pollock,630,right-hand-bat,right-arm-fast-medium,Bowler,South Africa
+SMSM Senanayake,631,right-hand-bat,right-arm-offbreak,Allrounder,Sri Lanka
+SN Khan,632,left-hand-bat,right-arm-fast,Bowler,Afghanistan
+SN Thakur,633,right-hand-bat,right-arm-fast-medium,Bowler,India
+SO Hetmyer,634,left-hand-bat,,Batsman,West Indies
+SP Fleming,635,left-hand-bat,,Batsman,New Zealand
+SP Goswami,636,left-hand-bat,,Wicketkeeper,India
+SP Jackson,637,right-hand-bat,,Wicketkeeper,India
+SP Narine,638,left-hand-bat,right-arm-offbreak,Bowler,West Indies
+SPD Smith,639,right-hand-bat,legbreak-googly,Middle Order Batter,Australia
+SR Tendulkar,640,right-hand-bat,legbreak,Batsman,India
+SR Watson,641,right-hand-bat,right-arm-fast-medium,Allrounder,Australia
+SS Agarwal,642,right-hand-bat,legbreak-googly,Bowler,India
+SS Cottrell,643,right-hand-bat,left-arm-fast-medium,Bowler,West Indies
+SS Iyer,644,right-hand-bat,legbreak-googly,Batsman,India
+SS Mundhe,645,,,,
+SS Prabhudessai,646,right-hand-bat,,Batsman,India
+SS Sarkar,647,,,,
+SS Shaikh,648,left-hand-bat,slow-left-arm-orthodox,Batsman,India
+SS Tiwary,649,left-hand-bat,,Batsman,India
+SSB Magala,650,,,,
+ST Jayasuriya,651,left-hand-bat,slow-left-arm-orthodox,Allrounder,Sri Lanka
+STR Binny,652,right-hand-bat,right-arm-fast-medium,Allrounder,India
+SV Samson,653,right-hand-bat,,Wicketkeeper,India
+SW Billings,654,right-hand-bat,,Wicketkeeper,England
+SW Tait,655,right-hand-bat,right-arm-fast,Bowler,Australia
+SZ Mulani,656,left-hand-bat,slow-left-arm-orthodox,Allrounder,India
+Sachin Baby,657,left-hand-bat,right-arm-offbreak,Batsman,India
+Salman Butt,658,right-hand-bat,right-arm-offbreak,Batsman,Pakistan
+Sameer Rizvi,659,,,,
+Sandeep Sharma,660,right-hand-bat,right-arm-fast-medium,Bowler,India
+Sanvir Singh,661,right-hand-bat,right-arm-fast-medium,Allrounder,India
+Saurav Chauhan,662,right-hand-bat,,Batsman,India
+Sediqullah Atal,663,left-hand-bat,,Batsman,Afghanistan
+Shahbaz Ahmed,664,left-hand-bat,slow-left-arm-orthodox,Allrounder,India
+Shahid Afridi,665,right-hand-bat,legbreak,Allrounder,Pakistan
+Shakib Al Hasan,666,left-hand-bat,slow-left-arm-orthodox,Allrounder,Bangladesh
+Shashank Singh,667,right-hand-bat,right-arm-offbreak,Allrounder,India
+Shivam Mavi,668,right-hand-bat,right-arm-fast-medium,Bowler,India
+Shivam Sharma,669,right-hand-bat,right-arm-offbreak,Bowler,India
+Shivam Singh,670,right-hand-bat,right-arm-offbreak,Allrounder,India
+Shoaib Ahmed,671,right-hand-bat,right-arm-fast-medium,Allrounder,Cyprus
+Shoaib Akhtar,672,right-hand-bat,right-arm-fast,Bowler,Pakistan
+Shoaib Malik,673,right-hand-bat,right-arm-offbreak,Allrounder,Pakistan
+Shubman Gill,674,right-hand-bat,right-arm-offbreak,Batsman,India
+Sikandar Raza,675,right-hand-bat,right-arm-offbreak,Allrounder,Zimbabwe
+Simarjeet Singh,676,right-hand-bat,right-arm-fast-medium,Bowler,India
+Sohail Tanvir,677,left-hand-bat,left-arm-fast-medium,Bowler,Pakistan
+Sumit Kumar,678,right-hand-bat,,Wicketkeeper,India
+Sunny Gupta,679,,,Batsman,India
+Sunny Singh,680,right-hand-bat,right-arm-fast-medium,Batsman,India
+Suryansh Shedge,681,right-hand-bat,,Batsman,India
+Suyash Sharma,682,right-hand-bat,legbreak,Bowler,India
+Swapnil Singh,683,right-hand-bat,slow-left-arm-orthodox,Bowler,India
+T Banton,684,right-hand-bat,,Batsman,England
+T Henderson,685,,,,
+T Kohler-Cadmore,686,right-hand-bat,right-arm-offbreak,Batsman,England
+T Kohli,687,,,,
+T Natarajan,688,left-hand-bat,left-arm-fast-medium,Bowler,India
+T Shamsi,689,right-hand-bat,slow-left-arm-orthodox,Bowler,South Africa
+T Stubbs,690,right-hand-bat,legbreak,Wicketkeeper,South Africa
+T Taibu,691,right-hand-bat,right-arm-fast-medium,Wicketkeeper,Zimbabwe
+T Thushara,692,left-hand-bat,left-arm-fast-medium,Bowler,Sri Lanka
+TA Boult,693,right-hand-bat,left-arm-fast-medium,Bowler,New Zealand
+TD Paine,694,right-hand-bat,right-arm-fast-medium,Wicketkeeper,Australia
+TG Southee,695,right-hand-bat,right-arm-fast-medium,Bowler,New Zealand
+TH David,696,right-hand-bat,right-arm-offbreak,Batsman,Australia
+TK Curran,697,right-hand-bat,right-arm-fast-medium,Bowling Allrounder,England
+TL Seifert,698,right-hand-bat,,Wicketkeeper,New Zealand
+TL Suman,699,,,,
+TM Dilshan,700,right-hand-bat,right-arm-offbreak,Allrounder,Sri Lanka
+TM Head,701,left-hand-bat,right-arm-offbreak,Middle Order Batter,Australia
+TM Srivastava,702,,,Bowler,Oman
+TP Sudhindra,703,,,,
+TR Birt,704,,,,
+TS Mills,705,right-hand-bat,left-arm-fast,Bowler,England
+TU Deshpande,706,left-hand-bat,right-arm-fast-medium,Bowler,India
+Tanush Kotian,707,right-hand-bat,right-arm-offbreak,Allrounder,India
+Tejas Baroka,708,right-hand-bat,legbreak-googly,Bowler,India
+Tilak Varma,709,left-hand-bat,right-arm-offbreak,Batting Allrounder,India
+U Kaul,710,,,,
+UA Birla,711,right-hand-bat,right-arm-fast-medium,Batsman,India
+UBT Chand,712,right-hand-bat,right-arm-offbreak,Batsman,India
+UT Khawaja,713,left-hand-bat,right-arm-fast-medium,Batsman,Australia
+UT Yadav,714,right-hand-bat,right-arm-fast,Bowler,India
+Umar Gul,715,right-hand-bat,right-arm-fast-medium,Bowler,Pakistan
+Umran Malik,716,right-hand-bat,right-arm-fast-medium,Bowler,India
+Urvil Patel,717,right-hand-bat,,Wicketkeeper,India
+V Kaverappa,718,right-hand-bat,right-arm-fast-medium,Bowler,India
+V Kohli,719,right-hand-bat,right-arm-fast-medium,Batsman,India
+V Nigam,720,,,,
+V Pratap Singh,721,right-hand-bat,right-arm-fast-medium,Bowler,India
+V Puthur,722,,,,
+V Sehwag,723,right-hand-bat,right-arm-offbreak,Batsman,India
+V Shankar,724,right-hand-bat,right-arm-fast-medium,Allrounder,India
+V Suryavanshi,725,,,,
+V Viyaskanth,726,right-hand-bat,right-arm-fast-medium,Bowler,India
+VG Arora,727,right-hand-bat,right-arm-fast-medium,Bowler,India
+VH Zol,728,,,,
+VR Aaron,729,right-hand-bat,right-arm-fast,Bowler,India
+VR Iyer,730,left-hand-bat,right-arm-fast-medium,Allrounder,India
+VRV Singh,731,,,Batsman,Croatia
+VS Malik,732,,,Allrounder,Estonia
+VS Yeligati,733,,,,
+VVS Laxman,734,,,,
+VY Mahesh,735,right-hand-bat,right-arm-fast-medium,Allrounder,India
+Vijaykumar Vyshak,736,right-hand-bat,right-arm-fast-medium,Bowler,India
+Virat Singh,737,left-hand-bat,legbreak-googly,Batsman,India
+Vishnu Vinod,738,right-hand-bat,,Wicketkeeper,India
+Vivrant Sharma,739,left-hand-bat,legbreak-googly,Batsman,India
+W Jaffer,740,,,,
+W O'Rourke,741,right-hand-bat,right-arm-fast-medium,Bowler,New Zealand
+WA Mota,742,,,,
+WD Parnell,743,left-hand-bat,left-arm-fast-medium,Bowler,South Africa
+WG Jacks,744,right-hand-bat,right-arm-offbreak,Batsman,England
+WP Saha,745,right-hand-bat,,Wicketkeeper,India
+WPUJC Vaas,746,left-hand-bat,left-arm-fast-medium,Bowler,Sri Lanka
+Washington Sundar,747,left-hand-bat,right-arm-offbreak,Bowling Allrounder,India
+X Thalaivan Sargunam,748,right-hand-bat,right-arm-offbreak,Batsman,India
+XC Bartlett,749,right-hand-bat,right-arm-fast-medium,Bowler,Australia
+Y Gnaneswara Rao,750,,,Batsman,Cyprus
+Y Nagar,751,right-hand-bat,right-arm-offbreak,Allrounder,India
+Y Prithvi Raj,752,left-hand-bat,left-arm-fast-medium,Bowler,India
+Y Venugopal Rao,753,right-hand-bat,right-arm-offbreak,Batsman,India
+YA Abdulla,754,,,Allrounder,Sweden
+YBK Jaiswal,755,,,,
+YK Pathan,756,right-hand-bat,right-arm-offbreak,Allrounder,India
+YS Chahal,757,right-hand-bat,legbreak-googly,Bowler,India
+YV Dhull,758,right-hand-bat,right-arm-offbreak,Batsman,India
+YV Takawale,759,right-hand-bat,,Wicketkeeper,India
+Yash Dayal,760,left-hand-bat,left-arm-fast-medium,Bowler,India
+Yash Thakur,761,right-hand-bat,right-arm-fast-medium,Bowler,India
+Yashpal Singh,762,,,Bowler,Portugal
+Younis Khan,763,right-hand-bat,right-arm-fast-medium,Batsman,Pakistan
+Yudhvir Singh,764,,,Batsman,Spain
+Yuvraj Singh,765,left-hand-bat,slow-left-arm-orthodox,Allrounder,India
+Z Khan,766,right-hand-bat,left-arm-fast-medium,Bowler,India
+Zeeshan Ansari,767,,,Wicketkeeper,Spain
