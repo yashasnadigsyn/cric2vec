@@ -6,8 +6,9 @@ This prepares the data for Cricket2Vec training.
 import pandas as pd
 import os
 import glob
+from pathlib import Path
 
-from config import DATA_DIR, COMBINED_CSV, COMBINED_PARQUET, COLUMNS_TO_KEEP
+from config import DATA_DIR, COMBINED_CSV, COMBINED_PARQUET, COLUMNS_TO_KEEP, WPL_JSON_DIR
 from config import PLAYER_MAPPING, TEAM_MAPPING, VENUE_MAPPING, OUTCOME_MAPPING
 from mapping import (
     create_player_mapping, save_player_mapping,
@@ -17,34 +18,153 @@ from mapping import (
 )
 
 
-def combine_csv_files() -> pd.DataFrame:
-    """Combine all CSVs (excluding _info files) into a single DataFrame."""
+import json
+
+def process_wpl_json(json_file: str) -> pd.DataFrame:
+    """Parse a single WPL JSON file and convert to DataFrame matching IPL schema."""
+    with open(json_file, 'r') as f:
+        data = json.load(f)
     
-    # Get all CSV files that are NOT _info files
+    match_id = Path(json_file).stem
+    info = data.get('info', {})
+    meta = data.get('meta', {})
+    
+    # Match metadata
+    season = info.get('season')
+    dates = info.get('dates', [])
+    start_date = dates[0] if dates else None
+    venue = info.get('venue')
+    gender = info.get('gender', 'female') # Default to female for WPL if missing
+    
+    # Teams
+    teams = info.get('teams', [])
+    
+    rows = []
+    
+    for i, inning in enumerate(data.get('innings', [])):
+        innings_num = i + 1
+        batting_team = inning.get('team')
+        
+        # Determine bowling team
+        bowling_team = next((t for t in teams if t != batting_team), None)
+        
+        for over in inning.get('overs', []):
+            over_num = over.get('over')
+            
+            for ball_idx, delivery in enumerate(over.get('deliveries', [])):
+                # Construct ball number (e.g. 0.1, 0.2 ... 0.6)
+                # Note: CSV uses 0.1 for first ball of first over
+                ball_num = float(f"{over_num}.{ball_idx + 1}")
+                
+                batter = delivery.get('batter')
+                non_striker = delivery.get('non_striker')
+                bowler = delivery.get('bowler')
+                
+                runs = delivery.get('runs', {})
+                runs_off_bat = runs.get('batter', 0)
+                extras_total = runs.get('extras', 0)
+                
+                # Extras breakdown
+                extras_data = delivery.get('extras', {})
+                wides = extras_data.get('wides')
+                noballs = extras_data.get('noballs')
+                byes = extras_data.get('byes')
+                legbyes = extras_data.get('legbyes')
+                penalty = extras_data.get('penalty')
+                
+                # Wickets
+                wickets = delivery.get('wickets', [])
+                if wickets:
+                    # Take the first wicket if multiple (rare but possible in runouts)
+                    # Ideally we might want to create multiple rows or handle differently,
+                    # but for player embeddings main wicket is key.
+                    wicket = wickets[0]
+                    wicket_type = wicket.get('kind')
+                    player_dismissed = wicket.get('player_out')
+                else:
+                    wicket_type = None
+                    player_dismissed = None
+                
+                row = {
+                    'match_id': match_id,
+                    'season': season,
+                    'start_date': start_date,
+                    'venue': venue,
+                    'innings': innings_num,
+                    'ball': ball_num,
+                    'batting_team': batting_team,
+                    'bowling_team': bowling_team,
+                    'striker': batter,
+                    'non_striker': non_striker,
+                    'bowler': bowler,
+                    'runs_off_bat': runs_off_bat,
+                    'extras': extras_total,
+                    'wides': wides,
+                    'noballs': noballs,
+                    'byes': byes,
+                    'legbyes': legbyes,
+                    'penalty': penalty,
+                    'wicket_type': wicket_type,
+                    'player_dismissed': player_dismissed,
+                    'gender': gender,
+                    'other_wicket_type': None,        # Placeholders to match CSV
+                    'other_player_dismissed': None
+                }
+                rows.append(row)
+                
+    return pd.DataFrame(rows)
+
+def combine_all_data() -> pd.DataFrame:
+    """Combine IPL CSVs and WPL JSONs into a single DataFrame."""
+    
+    all_dfs = []
+    
+    # --- 1. Process IPL CSV Files ---
+    print("\nProcessing IPL CSV files...")
     csv_pattern = str(DATA_DIR / "*.csv")
-    all_files = glob.glob(csv_pattern)
+    csv_files = glob.glob(csv_pattern)
+    match_csvs = [f for f in csv_files if '_info' not in f]
     
-    # Filter out _info files
-    match_files = [f for f in all_files if '_info' not in f]
+    print(f"Found {len(match_csvs)} IPL CSV files")
     
-    print(f"Found {len(match_files)} match files")
-    
-    # Read and concatenate all files
-    dfs = []
-    for i, file in enumerate(sorted(match_files)):
+    for i, file in enumerate(sorted(match_csvs)):
         try:
             df = pd.read_csv(file)
-            dfs.append(df)
+            df['gender'] = 'male'  # Label IPL data as male
+            all_dfs.append(df)
             
             if (i + 1) % 200 == 0:
-                print(f"Processed {i + 1}/{len(match_files)} files...")
-                
+                print(f"Processed {i + 1}/{len(match_csvs)} CSV files...")
         except Exception as e:
-            print(f"Error reading {file}: {e}")
+            print(f"Error reading CSV {file}: {e}")
+
+    # --- 2. Process WPL JSON Files ---
+    print("\nProcessing WPL JSON files...")
+    from pathlib import Path
+    json_pattern = str(WPL_JSON_DIR / "*.json")
+    json_files = glob.glob(json_pattern)
     
-    # Combine all DataFrames
-    combined_df = pd.concat(dfs, ignore_index=True)
+    print(f"Found {len(json_files)} WPL JSON files")
+    
+    for i, file in enumerate(sorted(json_files)):
+        try:
+            df = process_wpl_json(file)
+            all_dfs.append(df)
+             
+            if (i + 1) % 10 == 0:
+                 print(f"Processed {i + 1}/{len(json_files)} JSON files...")
+                 
+        except Exception as e:
+            print(f"Error reading JSON {file}: {e}")
+    
+    # --- 3. Combine ---
+    if not all_dfs:
+        print("No data found!")
+        return pd.DataFrame()
+        
+    combined_df = pd.concat(all_dfs, ignore_index=True)
     print(f"\nTotal rows combined: {len(combined_df):,}")
+    print(f"Gender distribution:\n{combined_df['gender'].value_counts()}")
     
     return combined_df
 
@@ -143,8 +263,8 @@ if __name__ == "__main__":
     print("Starting data combination...")
     print("="*60)
     
-    # Step 1: Combine all CSVs
-    combined_df = combine_csv_files()
+    # Step 1: Combine all data (IPL + WPL)
+    combined_df = combine_all_data()
     
     # Step 2: Process and save
     subset_df = process_and_save(combined_df)

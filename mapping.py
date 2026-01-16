@@ -8,9 +8,7 @@ import json
 from pathlib import Path
 from typing import Tuple, Dict, Set
 
-# =============================================================================
-# Outcome Definitions (Merged for better class balance)
-# =============================================================================
+# Outcome Definitions
 
 # Reduced outcome classes (16 -> 12) to address class imbalance
 OUTCOME_CLASSES = [
@@ -133,9 +131,7 @@ def load_outcome_mapping(filepath: Path) -> dict:
         }
 
 
-# =============================================================================
-# Player Mapping Functions
-# =============================================================================
+# --- Player Mapping ---
 
 def create_player_mapping(df: pd.DataFrame) -> Dict[str, int]:
     """
@@ -179,9 +175,7 @@ def load_player_mapping(filepath: Path) -> Dict[str, int]:
     return dict(zip(df['player_name'], df['player_id']))
 
 
-# =============================================================================
-# Team Mapping Functions
-# =============================================================================
+# --- Team Mapping ---
 
 def create_team_mapping(df: pd.DataFrame) -> Dict[str, int]:
     """
@@ -217,9 +211,7 @@ def load_team_mapping(filepath: Path) -> Dict[str, int]:
     return dict(zip(df['team_name'], df['team_id']))
 
 
-# =============================================================================
-# Venue Mapping Functions
-# =============================================================================
+# --- Venue Mapping ---
 
 def create_venue_mapping(df: pd.DataFrame) -> Dict[str, int]:
     """
@@ -254,9 +246,7 @@ def load_venue_mapping(filepath: Path) -> Dict[str, int]:
     return dict(zip(df['venue_name'], df['venue_id']))
 
 
-# =============================================================================
-# Utility Functions
-# =============================================================================
+# --- Utilities ---
 
 def get_num_players(filepath: Path) -> int:
     """Get the number of players from a mapping file."""

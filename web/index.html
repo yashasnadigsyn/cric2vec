@@ -299,7 +299,7 @@
                     <div id="sim-demo" class="tab-content">
                         <div class="console-header">Run Simulation: <strong>V Kohli</strong> vs <strong>JO
                                 Holder</strong></div>
-                        <div class="code-output" id="sim-output"><span class="prompt">></span> init_engine
+                        <div class="code-output" id="demo-sim-output"><span class="prompt">></span> init_engine
                             --mode=granular <br>
                             <span class="info">Loading weights... OK</span> <br>
                             <span class="prompt">></span> simulate_over(batter="V Kohli", bowler="JO Holder")
@@ -318,7 +318,7 @@
                     <div id="bunny-finder" class="tab-content" style="display: none;">
                         <div class="console-header">Query: Highest Wicket Probability vs <strong>Jasprit Bumrah</strong>
                         </div>
-                        <div class="code-output" id="bunny-output"><span class="prompt">></span> find_matchups
+                        <div class="code-output" id="demo-bunny-output"><span class="prompt">></span> find_matchups
                             --bowler="JJ Bumrah" --metric="wicket_prob" --top=5
 
                             <span class="result-line">1. GJ Maxwell (prob: 0.32)</span>
@@ -340,6 +340,71 @@
                                 vector towards Dhoni—a pure finisher who accelerates from ball one.</span>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="playground" class="interactive-section">
+            <h2>🏏 Interactive Playground</h2>
+
+            <div class="playground-disclaimer">
+                ⚠️ <strong>For Fun Only!</strong> This is NOT for betting predictions. The model is trained for
+                exploring "what-if" scenarios that we can't see in real cricket — like
+                <em>Shreyanka Patil bowling to Virat Kohli</em> or <em>AC Kerr vs MS Dhoni</em>.
+                Enjoy the imagination, not the accuracy!
+            </div>
+
+            <p class="playground-note">Connect to the API server: <code>uv run python api.py</code></p>
+
+            <div class="playground-grid-2">
+                <!-- Player Search -->
+                <div class="playground-card">
+                    <h3>🔍 Player Search</h3>
+                    <p>Find players by name (fuzzy matching)</p>
+                    <div class="input-group">
+                        <input type="text" id="player-search-input" placeholder="e.g., Virat Kohli, Shreyanka Patil">
+                        <button id="search-btn" class="btn">Search</button>
+                    </div>
+                    <div id="search-results" class="output-area">
+                        <p class="hint">Enter a player name to search</p>
+                    </div>
+                </div>
+
+                <!-- Simulation -->
+                <div class="playground-card">
+                    <h3>🎲 Fantasy Over Simulator</h3>
+                    <p>What if? Simulate matchups that never happened!</p>
+                    <div class="input-group">
+                        <input type="text" id="sim-batter" placeholder="Batter (e.g., V Kohli)">
+                        <input type="text" id="sim-bowler" placeholder="Bowler (e.g., AC Kerr, SP Narine)">
+                        <button id="sim-btn" class="btn">Simulate Over</button>
+                    </div>
+                    <div id="sim-output" class="output-area">
+                        <p class="hint">Try cross-gender matchups like MS Dhoni vs Shreyanka Patil!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="playground-ideas">
+                <h4>💡 Fun Ideas to Try</h4>
+                <ul>
+                    <li><strong>Cross-league:</strong> V Kohli vs AC Kerr (WPL star bowling to IPL legend)</li>
+                    <li><strong>Era clash:</strong> CH Gayle vs current bowlers</li>
+                    <li><strong>Role swap:</strong> What if a primarily-batter faced a specific bowler?</li>
+                </ul>
+            </div>
+
+            <!-- Probability Visualizer -->
+            <div class="playground-card full-width">
+                <h3>📊 Matchup Probability Breakdown</h3>
+                <p>See the outcome probabilities for any batter vs bowler!</p>
+                <div class="input-group input-row">
+                    <input type="text" id="prob-batter" placeholder="Batter (e.g., RG Sharma)">
+                    <input type="text" id="prob-bowler" placeholder="Bowler (e.g., AC Kerr)">
+                    <button id="prob-btn" class="btn">Show Probabilities</button>
+                </div>
+                <div id="prob-output" class="prob-chart-area">
+                    <p class="hint">Enter a matchup to see the visual breakdown</p>
                 </div>
             </div>
         </section>
@@ -376,13 +441,14 @@
 
     </article>
 
-   <h5>GitHub: https://github.com/yashasnadigsyn/cric2vec/</h5>
+    <h5>GitHub: https://github.com/yashasnadigsyn/cric2vec/</h5>
 
     <footer>
         <p>Cric2Vec Research &copy; 2026</p>
     </footer>
 
     <script src="script.js"></script>
+    <script src="playground.js"></script>
 </body>
 
 </html>

@@ -5,29 +5,21 @@ Centralizes all paths and configuration constants.
 
 from pathlib import Path
 
-# =============================================================================
-# Base Paths
-# =============================================================================
+# Paths
 BASE_DIR = Path(__file__).parent
 DATA_DIR = BASE_DIR / "ipl_male_csv2"
 
-# =============================================================================
-# Data Files
-# =============================================================================
+
 COMBINED_CSV = BASE_DIR / "ipl_combined.csv"
 COMBINED_PARQUET = BASE_DIR / "ipl_combined.parquet"
 
-# =============================================================================
-# Mapping Files
-# =============================================================================
+
 PLAYER_MAPPING = BASE_DIR / "player_mapping.csv"
 TEAM_MAPPING = BASE_DIR / "team_mapping.csv"
 VENUE_MAPPING = BASE_DIR / "venue_mapping.csv"
 OUTCOME_MAPPING = BASE_DIR / "outcome_mapping.json"
 
-# =============================================================================
-# Columns to keep from raw CSV files
-# =============================================================================
+
 COLUMNS_TO_KEEP = [
     'match_id',
     'season',        # For temporal analysis
@@ -50,20 +42,20 @@ COLUMNS_TO_KEEP = [
     'wicket_type',
     'player_dismissed',
     'other_wicket_type',
-    'other_player_dismissed'
+    'other_player_dismissed',
+    'gender' 
 ]
 
-# =============================================================================
-# Model Configuration (aligned with batter_pitcher2vec paper)
-# =============================================================================
+
+WPL_JSON_DIR = BASE_DIR / "wpl_json"
+
+# Model Config
 MODEL_CONFIG = {
     'embedding_dim': 9,      # Paper uses 9-dimensional embeddings
     'hidden_dim': 128,       # Single hidden layer
 }
 
-# =============================================================================
-# Training Configuration (aligned with batter_pitcher2vec paper)
-# =============================================================================
+# Training Config
 TRAINING_CONFIG = {
     'batch_size': 128,       # Paper uses 100, we use 128 for GPU efficiency
     'learning_rate': 0.01,   # Paper uses 0.01
@@ -72,13 +64,9 @@ TRAINING_CONFIG = {
     'epochs': 100,
     'val_split': 0.1,
     'num_workers': 0,        # Set to 4 if running on a machine with multiple cores
-    'use_focal_loss': False, # Set to True to use focal loss instead of cross-entropy
-    'focal_gamma': 2.0,      # Focusing parameter for focal loss (try 0.5, 1.0, 2.0, 3.0)
 }
 
-# =============================================================================
-# Device Configuration
-# =============================================================================
+# Device
 import torch
 DEVICE = 'cuda' if torch.cuda.is_available() else 'cpu'
 

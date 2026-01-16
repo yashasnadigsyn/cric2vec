@@ -28,16 +28,14 @@ from sklearn.cluster import KMeans
 from rapidfuzz import fuzz, process
 
 from config import (
-    CHECKPOINT_DIR, PLAYER_MAPPING, OUTCOME_MAPPING, 
+    CHECKPOINT_DIR, PLAYER_MAPPING, TEAM_MAPPING, VENUE_MAPPING, OUTCOME_MAPPING, 
     MODEL_CONFIG, DEVICE
 )
-from model import Cricket2Vec
-from mapping import load_player_mapping, load_outcome_mapping
+from model_v2 import Cricket2VecV2
+from mapping import load_player_mapping, load_team_mapping, load_venue_mapping, load_outcome_mapping
 
 
-# =============================================================================
-# Archetype Definitions (Verified player names from dataset)
-# =============================================================================
+# Archetype Definitions
 
 BATTER_ARCHETYPES: Dict[str, List[str]] = {
     'anchor': ['V Kohli', 'KL Rahul', 'S Dhawan', 'AM Rahane'],
@@ -83,25 +81,35 @@ class CricInsights:
         self.id_to_player: Dict[int, str] = {v: k for k, v in self.player_to_id.items()}
         self._player_names: List[str] = list(self.player_to_id.keys())
         
+        self.team_to_id: Dict[str, int] = load_team_mapping(TEAM_MAPPING)
+        self.venue_to_id: Dict[str, int] = load_venue_mapping(VENUE_MAPPING)
+        
         outcome_map = load_outcome_mapping(OUTCOME_MAPPING)
         self.outcome_to_id: Dict[str, int] = outcome_map['outcome_to_id']
         self.id_to_outcome: Dict[int, str] = {int(k): v for k, v in outcome_map['id_to_outcome'].items()}
         
         self.num_players: int = len(self.player_to_id)
+        self.num_teams: int = len(self.team_to_id)
+        self.num_venues: int = len(self.venue_to_id)
         self.num_outcomes: int = len(self.outcome_to_id)
         
-        # 2. Load Model
-        self.model = Cricket2Vec(
-            self.num_players, 
-            self.num_outcomes, 
-            MODEL_CONFIG['embedding_dim']
+        # 2. Load V2 Model
+        self.model = Cricket2VecV2(
+            num_players=self.num_players,
+            num_teams=self.num_teams,
+            num_venues=self.num_venues,
+            num_outcomes=self.num_outcomes,
+            embedding_dim=MODEL_CONFIG['embedding_dim']
         ).to(self.device)
         
         if checkpoint_path is None:
-            checkpoints = sorted(CHECKPOINT_DIR.glob("*.pth"))
+            # Look for V2 checkpoints (.pt files)
+            checkpoints = sorted(CHECKPOINT_DIR.glob("*.pt"))
             if not checkpoints:
-                raise FileNotFoundError("No checkpoints found! Train the model first.")
-            checkpoint_path = checkpoints[-1]
+                raise FileNotFoundError("No checkpoints found! Train the model first with train_v2.py")
+            # Prefer best_model_v2.pt if it exists
+            best = CHECKPOINT_DIR / "best_model_v2.pt"
+            checkpoint_path = best if best.exists() else checkpoints[-1]
             
         print(f"Loading checkpoint: {checkpoint_path.name}")
         checkpoint = torch.load(checkpoint_path, map_location=self.device, weights_only=False)
@@ -119,9 +127,21 @@ class CricInsights:
         
         print(f"Loaded {self.num_players} players, {self.num_outcomes} outcomes")
 
-    # =========================================================================
-    # Core Player ID Methods
-    # =========================================================================
+    def _predict(self, bat_ids: torch.Tensor, bowl_ids: torch.Tensor) -> torch.Tensor:
+        """Helper to run V2 model with default context values."""
+        batch_size = bat_ids.shape[0]
+        # Use first team/venue as default (context-free prediction)
+        default_team = torch.zeros(batch_size, dtype=torch.long, device=self.device)
+        default_venue = torch.zeros(batch_size, dtype=torch.long, device=self.device)
+        default_context = torch.zeros(batch_size, 2, device=self.device)  # (over_norm, innings_norm)
+        
+        return self.model(
+            bat_ids, bowl_ids,
+            default_team, default_team,  # bat_team, bowl_team
+            default_venue, default_context
+        )
+
+    # --- Core Methods ---
     
     def get_player_id(self, name: str) -> int:
         """
@@ -190,9 +210,7 @@ class CricInsights:
         
         raise ValueError(f"No player found matching '{name}' (threshold={threshold})")
 
-    # =========================================================================
-    # Matchup Analysis
-    # =========================================================================
+    # --- Matchup Analysis ---
     
     def get_matchup_probs(
         self, 
@@ -216,7 +234,7 @@ class CricInsights:
         bowl_tensor = torch.tensor([bowl_id]).to(self.device)
         
         with torch.no_grad():
-            logits = self.model(bat_tensor, bowl_tensor)
+            logits = self._predict(bat_tensor, bowl_tensor)
             probs = F.softmax(logits, dim=1).squeeze().cpu().numpy()
             
         return {self.id_to_outcome[i]: float(p) for i, p in enumerate(probs)}
@@ -267,9 +285,7 @@ class CricInsights:
         print(f"Over Summary: {total_runs}/{wickets}")
         return events
 
-    # =========================================================================
-    # Similarity Search
-    # =========================================================================
+    # --- Similarity Search ---
     
     def find_similar_players(
         self, 
@@ -339,10 +355,14 @@ class CricInsights:
         bowl_ids_repeated = torch.full((self.num_players,), bowl_id, device=self.device)
         
         with torch.no_grad():
-            logits = self.model(all_bat_ids, bowl_ids_repeated)
+            logits = self._predict(all_bat_ids, bowl_ids_repeated)
             probs = F.softmax(logits, dim=1)
             
         wicket_probs = probs[:, wicket_indices].sum(dim=1).cpu().numpy()
+        
+        # Exclude the bowler themselves from results
+        wicket_probs[bowl_id] = -1
+        
         top_indices = wicket_probs.argsort()[::-1][:top_k]
         
         print(f"\n--- Bunnies for {bowler_name} (High Wicket Prob) ---")
@@ -355,9 +375,7 @@ class CricInsights:
                 results.append((name, prob))
         return results
 
-    # =========================================================================
-    # K-Means Clustering (Section 7.2)
-    # =========================================================================
+    # --- K-Means Clustering ---
     
     def cluster_players(
         self, 
@@ -486,9 +504,7 @@ class CricInsights:
         plt.close()
         print(f"Saved clustered t-SNE plot to {save_path}")
 
-    # =========================================================================
-    # Player Algebra (Section 7.1)
-    # =========================================================================
+    # --- Player Algebra ---
     
     def get_archetype_vector(
         self, 
@@ -622,9 +638,7 @@ class CricInsights:
         
         return results
 
-    # =========================================================================
-    # Player Metadata and Doppelgängers (Section 7.3)
-    # =========================================================================
+    # --- Doppelgängers ---
     
     def load_player_metadata(
         self, 
@@ -724,9 +738,7 @@ class CricInsights:
         
         return results
 
-    # =========================================================================
-    # Matchup Heatmap (Section 7.5)
-    # =========================================================================
+    # --- Matchup Heatmap ---
     
     def matchup_heatmap(
         self,
@@ -772,7 +784,7 @@ class CricInsights:
                 bowl_tensor = torch.tensor([bowl_id]).to(self.device)
                 
                 with torch.no_grad():
-                    logits = self.model(bat_tensor, bowl_tensor)
+                    logits = self._predict(bat_tensor, bowl_tensor)
                     all_probs = F.softmax(logits, dim=1).squeeze().cpu().numpy()
                 
                 probs[i, j] = sum(all_probs[idx] for idx in outcome_indices)
@@ -802,9 +814,7 @@ class CricInsights:
         
         return probs
 
-    # =========================================================================
-    # Dream XI Generator (Section 7.4)
-    # =========================================================================
+    # --- Dream XI Generator ---
     
     def build_dream_team(
         self,
@@ -932,9 +942,7 @@ class CricInsights:
         
         return team
 
-    # =========================================================================
-    # Quiz Feature (Section 7.8)
-    # =========================================================================
+    # --- Quiz Feature ---
     
     def who_would_you_face_quiz(
         self,
@@ -983,7 +991,7 @@ class CricInsights:
                     bowl_t = torch.tensor([pid]).to(self.device)
                 
                 with torch.no_grad():
-                    logits = self.model(bat_t, bowl_t)
+                    logits = self._predict(bat_t, bowl_t)
                     all_probs = F.softmax(logits, dim=1).squeeze().cpu().numpy()
                 
                 wicket_prob = sum(all_probs[idx] for idx in wicket_indices)
@@ -1015,9 +1023,7 @@ class CricInsights:
         else:
             print("Keep practicing!")
 
-    # =========================================================================
-    # Visualization
-    # =========================================================================
+    # --- Visualization ---
     
     def plot_embeddings(
         self, 
@@ -1067,9 +1073,7 @@ class CricInsights:
         print(f"Saved plot to {save_path}")
 
 
-# =============================================================================
-# Main Demo
-# =============================================================================
+# --- Main Demo ---
 
 if __name__ == "__main__":
     try:

@@ -83,11 +83,6 @@ def train():
     )
     
     # 5. Loss Function
-    # TODO: Add Focal Loss support if needed, for now standard CrossEntropy
-    # But wait, TODO 2.4 says "Consider Focal Loss". Let's stick to CrossEntropy for initial V2 test
-    # to isolate variables, unless the TODO explicitly demanded it for V2.
-    # The TODO 2.4 was "Consider Focal Loss", not mandatory for V2, but good to have.
-    # Let's use CrossEntropy for stability first.
     criterion = nn.CrossEntropyLoss()
     
     # 6. Training Loop
